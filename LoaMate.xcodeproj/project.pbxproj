@@ -279,6 +279,7 @@
 		FCE82A5229406A3900442771 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A832940971D00442771 /* SetCharacters */,
 				FCE82A6C29408C5400442771 /* Main */,
 			);
 			path = Home;
@@ -395,6 +396,13 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FCE82A832940971D00442771 /* SetCharacters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SetCharacters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
