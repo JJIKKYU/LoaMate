@@ -190,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				FCE82A6D29408C6000442771 /* Register */,
-				FCE82A672940840C00442771 /* API */,
 				FCE82A3629405BFD00442771 /* AppRoot */,
 				FCE82A5229406A3900442771 /* Home */,
 				FCE82A5029406A1C00442771 /* Profile */,
@@ -248,6 +247,9 @@
 		FCE82A462940601100442771 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A6129407A6400442771 /* Repository */,
+				FCE82A6429407B1500442771 /* ServiceModel */,
+				FCE82A672940840C00442771 /* API */,
 				FCE82A7729408DAA00442771 /* DesignSystem */,
 				FCE82A5E29407A3000442771 /* Service+Util */,
 				FCE82A472940601500442771 /* RIBs+Util */,
@@ -275,8 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				FCE82A6C29408C5400442771 /* Main */,
-				FCE82A6429407B1500442771 /* Model */,
-				FCE82A6129407A6400442771 /* Repository */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -289,7 +289,6 @@
 				FCE82A5629406A4C00442771 /* LoginBuilder.swift */,
 				FCE82A5729406A4C00442771 /* LoginInteractor.swift */,
 				FCE82A5C29406E0900442771 /* AppleLoginManager.swift */,
-				FCE82A6229407A7400442771 /* LoaMateRepository.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -305,24 +304,24 @@
 		FCE82A6129407A6400442771 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A6229407A7400442771 /* LoaMateRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		FCE82A6429407B1500442771 /* Model */ = {
+		FCE82A6429407B1500442771 /* ServiceModel */ = {
 			isa = PBXGroup;
 			children = (
 				FCE82A6529407B2600442771 /* UserEmailModel.swift */,
 			);
-			path = Model;
+			path = ServiceModel;
 			sourceTree = "<group>";
 		};
 		FCE82A672940840C00442771 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A7E2940916F00442771 /* Model */,
 				FCE82A682940842A00442771 /* LostarkAPI.swift */,
-				FCE82A6A2940876700442771 /* CharaterInfoModel.swift */,
-				FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -368,6 +367,15 @@
 			children = (
 			);
 			path = NaviView;
+			sourceTree = "<group>";
+		};
+		FCE82A7E2940916F00442771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A6A2940876700442771 /* CharaterInfoModel.swift */,
+				FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
