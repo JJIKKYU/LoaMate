@@ -1,0 +1,825 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		116BEAD2D160923660177ED3 /* Pods_LoaMate_LoaMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */; };
+		225C3DC9295AD31208FCCFFB /* Pods_LoaMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0789A23B7BC3E28FE85C6348 /* Pods_LoaMateTests.framework */; };
+		40150E539080AB53F57EC287 /* Pods_LoaMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156EBA8B854B9CA8F54FC547 /* Pods_LoaMate.framework */; };
+		FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A0529405A4800442771 /* AppDelegate.swift */; };
+		FCE82A0A29405A4800442771 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A0929405A4800442771 /* ViewController.swift */; };
+		FCE82A0D29405A4800442771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0B29405A4800442771 /* Main.storyboard */; };
+		FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0E29405A4900442771 /* Assets.xcassets */; };
+		FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A1029405A4900442771 /* LaunchScreen.storyboard */; };
+		FCE82A1D29405A4A00442771 /* LoaMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A1C29405A4A00442771 /* LoaMateTests.swift */; };
+		FCE82A2729405A4A00442771 /* LoaMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A2629405A4A00442771 /* LoaMateUITests.swift */; };
+		FCE82A2929405A4A00442771 /* LoaMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A2829405A4A00442771 /* LoaMateUITestsLaunchTests.swift */; };
+		FCE82A3829405EA100442771 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3729405EA100442771 /* AppComponent.swift */; };
+		FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3929405EB000442771 /* AppRootRouter.swift */; };
+		FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3B29405F1D00442771 /* AppRootBuilder.swift */; };
+		FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3D29405F4700442771 /* AppRootInteractor.swift */; };
+		FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3F29405F7B00442771 /* AppRootComponent.swift */; };
+		FCE82A4229405FA000442771 /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A4129405FA000442771 /* AppRootViewController.swift */; };
+		FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A4329405FBE00442771 /* RootTabBarController.swift */; };
+		FCE82A492940602500442771 /* RIBs+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A482940602500442771 /* RIBs+Util.swift */; };
+		FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCE82A1929405A4A00442771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE829FA29405A4700442771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE82A0129405A4800442771;
+			remoteInfo = LoaMate;
+		};
+		FCE82A2329405A4A00442771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE829FA29405A4700442771 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCE82A0129405A4800442771;
+			remoteInfo = LoaMate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E9628C0FCCA73EDBDEE6DE /* Pods-LoaMate-LoaMateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate-LoaMateUITests.release.xcconfig"; path = "Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0789A23B7BC3E28FE85C6348 /* Pods_LoaMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		156EBA8B854B9CA8F54FC547 /* Pods_LoaMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54FCBF1EAC85AB6CE8D9FAAC /* Pods-LoaMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate.release.xcconfig"; path = "Target Support Files/Pods-LoaMate/Pods-LoaMate.release.xcconfig"; sourceTree = "<group>"; };
+		8A142573678A7CE02BBDFBA0 /* Pods-LoaMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate/Pods-LoaMate.debug.xcconfig"; sourceTree = "<group>"; };
+		8CA716B73D7F6C61F6303D02 /* Pods-LoaMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.release.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate-LoaMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMate_LoaMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE82A0229405A4800442771 /* LoaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE82A0529405A4800442771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCE82A0929405A4800442771 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCE82A0C29405A4800442771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCE82A0E29405A4900442771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCE82A1129405A4900442771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCE82A1329405A4900442771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCE82A1829405A4A00442771 /* LoaMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE82A1C29405A4A00442771 /* LoaMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaMateTests.swift; sourceTree = "<group>"; };
+		FCE82A2229405A4A00442771 /* LoaMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE82A2629405A4A00442771 /* LoaMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaMateUITests.swift; sourceTree = "<group>"; };
+		FCE82A2829405A4A00442771 /* LoaMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCE82A3729405EA100442771 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		FCE82A3929405EB000442771 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
+		FCE82A3B29405F1D00442771 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
+		FCE82A3D29405F4700442771 /* AppRootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootInteractor.swift; sourceTree = "<group>"; };
+		FCE82A3F29405F7B00442771 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
+		FCE82A4129405FA000442771 /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
+		FCE82A4329405FBE00442771 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		FCE82A482940602500442771 /* RIBs+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Util.swift"; sourceTree = "<group>"; };
+		FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCE829FF29405A4800442771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40150E539080AB53F57EC287 /* Pods_LoaMate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A1529405A4A00442771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225C3DC9295AD31208FCCFFB /* Pods_LoaMateTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A1F29405A4A00442771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116BEAD2D160923660177ED3 /* Pods_LoaMate_LoaMateUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B1D59775066B7D4A8E39FE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A142573678A7CE02BBDFBA0 /* Pods-LoaMate.debug.xcconfig */,
+				54FCBF1EAC85AB6CE8D9FAAC /* Pods-LoaMate.release.xcconfig */,
+				A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */,
+				00E9628C0FCCA73EDBDEE6DE /* Pods-LoaMate-LoaMateUITests.release.xcconfig */,
+				8CA716B73D7F6C61F6303D02 /* Pods-LoaMateTests.debug.xcconfig */,
+				9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF3A0D6FCF1CB9C59994CC01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				156EBA8B854B9CA8F54FC547 /* Pods_LoaMate.framework */,
+				DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */,
+				0789A23B7BC3E28FE85C6348 /* Pods_LoaMateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCE829F929405A4700442771 = {
+			isa = PBXGroup;
+			children = (
+				FCE82A0429405A4800442771 /* LoaMate */,
+				FCE82A1B29405A4A00442771 /* LoaMateTests */,
+				FCE82A2529405A4A00442771 /* LoaMateUITests */,
+				FCE82A0329405A4800442771 /* Products */,
+				6B1D59775066B7D4A8E39FE7 /* Pods */,
+				CF3A0D6FCF1CB9C59994CC01 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCE82A0329405A4800442771 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A0229405A4800442771 /* LoaMate.app */,
+				FCE82A1829405A4A00442771 /* LoaMateTests.xctest */,
+				FCE82A2229405A4A00442771 /* LoaMateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCE82A0429405A4800442771 /* LoaMate */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A462940601100442771 /* Platform */,
+				FCE82A3629405BFD00442771 /* AppRoot */,
+				FCE82A3529405BE800442771 /* AppDelegate */,
+				FCE82A0929405A4800442771 /* ViewController.swift */,
+				FCE82A0B29405A4800442771 /* Main.storyboard */,
+				FCE82A0E29405A4900442771 /* Assets.xcassets */,
+				FCE82A1029405A4900442771 /* LaunchScreen.storyboard */,
+				FCE82A1329405A4900442771 /* Info.plist */,
+			);
+			path = LoaMate;
+			sourceTree = "<group>";
+		};
+		FCE82A1B29405A4A00442771 /* LoaMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A1C29405A4A00442771 /* LoaMateTests.swift */,
+			);
+			path = LoaMateTests;
+			sourceTree = "<group>";
+		};
+		FCE82A2529405A4A00442771 /* LoaMateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A2629405A4A00442771 /* LoaMateUITests.swift */,
+				FCE82A2829405A4A00442771 /* LoaMateUITestsLaunchTests.swift */,
+			);
+			path = LoaMateUITests;
+			sourceTree = "<group>";
+		};
+		FCE82A3529405BE800442771 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A3729405EA100442771 /* AppComponent.swift */,
+				FCE82A0529405A4800442771 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FCE82A3629405BFD00442771 /* AppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A3929405EB000442771 /* AppRootRouter.swift */,
+				FCE82A3B29405F1D00442771 /* AppRootBuilder.swift */,
+				FCE82A3D29405F4700442771 /* AppRootInteractor.swift */,
+				FCE82A3F29405F7B00442771 /* AppRootComponent.swift */,
+				FCE82A4129405FA000442771 /* AppRootViewController.swift */,
+				FCE82A4329405FBE00442771 /* RootTabBarController.swift */,
+			);
+			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		FCE82A462940601100442771 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A472940601500442771 /* RIBs+Util */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		FCE82A472940601500442771 /* RIBs+Util */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A482940602500442771 /* RIBs+Util.swift */,
+				FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */,
+			);
+			path = "RIBs+Util";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCE82A0129405A4800442771 /* LoaMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE82A2C29405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMate" */;
+			buildPhases = (
+				006AAFDDD9AC1E8AC0B8FB87 /* [CP] Check Pods Manifest.lock */,
+				FCE829FE29405A4800442771 /* Sources */,
+				FCE829FF29405A4800442771 /* Frameworks */,
+				FCE82A0029405A4800442771 /* Resources */,
+				D8F08836DF9E659567B93AD7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoaMate;
+			productName = LoaMate;
+			productReference = FCE82A0229405A4800442771 /* LoaMate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCE82A1729405A4A00442771 /* LoaMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE82A2F29405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMateTests" */;
+			buildPhases = (
+				66CEBFBFF3058973DE9229CC /* [CP] Check Pods Manifest.lock */,
+				FCE82A1429405A4A00442771 /* Sources */,
+				FCE82A1529405A4A00442771 /* Frameworks */,
+				FCE82A1629405A4A00442771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE82A1A29405A4A00442771 /* PBXTargetDependency */,
+			);
+			name = LoaMateTests;
+			productName = LoaMateTests;
+			productReference = FCE82A1829405A4A00442771 /* LoaMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCE82A2129405A4A00442771 /* LoaMateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCE82A3229405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMateUITests" */;
+			buildPhases = (
+				EB2712D1A28223A2AA9628D7 /* [CP] Check Pods Manifest.lock */,
+				FCE82A1E29405A4A00442771 /* Sources */,
+				FCE82A1F29405A4A00442771 /* Frameworks */,
+				FCE82A2029405A4A00442771 /* Resources */,
+				26101B80A9E4E8516663F6EE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCE82A2429405A4A00442771 /* PBXTargetDependency */,
+			);
+			name = LoaMateUITests;
+			productName = LoaMateUITests;
+			productReference = FCE82A2229405A4A00442771 /* LoaMateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCE829FA29405A4700442771 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FCE82A0129405A4800442771 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					FCE82A1729405A4A00442771 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FCE82A0129405A4800442771;
+					};
+					FCE82A2129405A4A00442771 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FCE82A0129405A4800442771;
+					};
+				};
+			};
+			buildConfigurationList = FCE829FD29405A4700442771 /* Build configuration list for PBXProject "LoaMate" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCE829F929405A4700442771;
+			productRefGroup = FCE82A0329405A4800442771 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCE82A0129405A4800442771 /* LoaMate */,
+				FCE82A1729405A4A00442771 /* LoaMateTests */,
+				FCE82A2129405A4A00442771 /* LoaMateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCE82A0029405A4800442771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */,
+				FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */,
+				FCE82A0D29405A4800442771 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A1629405A4A00442771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A2029405A4A00442771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		006AAFDDD9AC1E8AC0B8FB87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoaMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26101B80A9E4E8516663F6EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66CEBFBFF3058973DE9229CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoaMateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F08836DF9E659567B93AD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoaMate/Pods-LoaMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoaMate/Pods-LoaMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoaMate/Pods-LoaMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2712D1A28223A2AA9628D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoaMate-LoaMateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCE829FE29405A4800442771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */,
+				FCE82A492940602500442771 /* RIBs+Util.swift in Sources */,
+				FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */,
+				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
+				FCE82A0A29405A4800442771 /* ViewController.swift in Sources */,
+				FCE82A3829405EA100442771 /* AppComponent.swift in Sources */,
+				FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */,
+				FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */,
+				FCE82A4229405FA000442771 /* AppRootViewController.swift in Sources */,
+				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
+				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A1429405A4A00442771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE82A1D29405A4A00442771 /* LoaMateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE82A1E29405A4A00442771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE82A2929405A4A00442771 /* LoaMateUITestsLaunchTests.swift in Sources */,
+				FCE82A2729405A4A00442771 /* LoaMateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCE82A1A29405A4A00442771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE82A0129405A4800442771 /* LoaMate */;
+			targetProxy = FCE82A1929405A4A00442771 /* PBXContainerItemProxy */;
+		};
+		FCE82A2429405A4A00442771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCE82A0129405A4800442771 /* LoaMate */;
+			targetProxy = FCE82A2329405A4A00442771 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCE82A0B29405A4800442771 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE82A0C29405A4800442771 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCE82A1029405A4900442771 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCE82A1129405A4900442771 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCE82A2A29405A4A00442771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCE82A2B29405A4A00442771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCE82A2D29405A4A00442771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A142573678A7CE02BBDFBA0 /* Pods-LoaMate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoaMate/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCE82A2E29405A4A00442771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54FCBF1EAC85AB6CE8D9FAAC /* Pods-LoaMate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoaMate/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCE82A3029405A4A00442771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CA716B73D7F6C61F6303D02 /* Pods-LoaMateTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaMate.app/LoaMate";
+			};
+			name = Debug;
+		};
+		FCE82A3129405A4A00442771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaMate.app/LoaMate";
+			};
+			name = Release;
+		};
+		FCE82A3329405A4A00442771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoaMate;
+			};
+			name = Debug;
+		};
+		FCE82A3429405A4A00442771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00E9628C0FCCA73EDBDEE6DE /* Pods-LoaMate-LoaMateUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V237TD2AXA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jjikkyu.LoaMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoaMate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCE829FD29405A4700442771 /* Build configuration list for PBXProject "LoaMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE82A2A29405A4A00442771 /* Debug */,
+				FCE82A2B29405A4A00442771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE82A2C29405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE82A2D29405A4A00442771 /* Debug */,
+				FCE82A2E29405A4A00442771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE82A2F29405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE82A3029405A4A00442771 /* Debug */,
+				FCE82A3129405A4A00442771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCE82A3229405A4A00442771 /* Build configuration list for PBXNativeTarget "LoaMateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCE82A3329405A4A00442771 /* Debug */,
+				FCE82A3429405A4A00442771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCE829FA29405A4700442771 /* Project object */;
+}
