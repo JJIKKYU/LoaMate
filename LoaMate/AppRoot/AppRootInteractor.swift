@@ -78,6 +78,12 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
                 let result = try? response.map([CharacterInfoModel].self)
                 print("sucess! = \(response.description), result = \(result)")
                 
+                if let result = result {
+                    self.dependency.loaMateRepository
+                        .charactersInfoRelay.accept(result)
+                }
+                
+                
             case .failure(let error):
                 print("error = \(error.localizedDescription)")
             }
@@ -97,7 +103,7 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
     
     func bind() {
         dependency.loaMateRepository
-            .userEmail.subscribe(onNext: { [weak self] email in
+            .userEmailRelay.subscribe(onNext: { [weak self] email in
                 guard let self = self else { return }
                 print("AppRoot :: email! = \(email)")
                 if email == "" {

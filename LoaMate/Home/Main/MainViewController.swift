@@ -21,6 +21,15 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
 
     weak var listener: MainPresentableListener?
     
+    private let naviView = UIView().then {
+        $0.backgroundColor = .black
+    }
+    
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .black
+    }
+    
     private let charactersBtn = BoxButton(frame: CGRect.zero, btnStatus: .active, btnSize: .xLarge).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.isFiltered = .disabled
@@ -37,13 +46,27 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
     }
     
     func setViews() {
-        view.addSubview(charactersBtn)
+        // view.addSubview(charactersBtn)
+        view.addSubview(naviView)
+        view.addSubview(collectionView)
+        view.bringSubviewToFront(naviView)
         
-        charactersBtn.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.width.equalToSuperview().inset(20)
-            make.height.equalTo(56)
-            make.top.equalToSuperview().offset(100)
+//        charactersBtn.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.width.equalToSuperview().inset(20)
+//            make.height.equalTo(56)
+//            make.top.equalToSuperview().offset(100)
+//        }
+        naviView.snp.makeConstraints { make in
+            make.leading.width.top.equalToSuperview()
+            make.height.equalTo(44 + UIApplication.topSafeAreaHeight)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.width.equalToSuperview()
+            make.top.equalToSuperview().offset(500)
+            make.bottom.equalToSuperview()
         }
     }
 }

@@ -44,6 +44,7 @@
 		FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7129408C7900442771 /* MainInteractor.swift */; };
 		FCE82A7A29408DBA00442771 /* BoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7929408DBA00442771 /* BoxButton.swift */; };
 		FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */; };
+		FCE82A82294092CE00442771 /* UIApplication+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A81294092CD00442771 /* UIApplication+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		FCE82A7129408C7900442771 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		FCE82A7929408DBA00442771 /* BoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButton.swift; sourceTree = "<group>"; };
 		FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmoryProfileModel.swift; sourceTree = "<group>"; };
+		FCE82A81294092CD00442771 /* UIApplication+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		FCE82A0429405A4800442771 /* LoaMate */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A7F294091AC00442771 /* LoaMateAssets */,
 				FCE82A6D29408C6000442771 /* Register */,
 				FCE82A3629405BFD00442771 /* AppRoot */,
 				FCE82A5229406A3900442771 /* Home */,
@@ -297,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE82A5F29407A4100442771 /* Realm+Util.swift */,
+				FCE82A81294092CD00442771 /* UIApplication+Util.swift */,
 			);
 			path = "Service+Util";
 			sourceTree = "<group>";
@@ -376,6 +380,21 @@
 				FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FCE82A7F294091AC00442771 /* LoaMateAssets */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A80294091C600442771 /* Fonts */,
+			);
+			path = LoaMateAssets;
+			sourceTree = "<group>";
+		};
+		FCE82A80294091C600442771 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,6 +661,7 @@
 				FCE82A6B2940876700442771 /* CharaterInfoModel.swift in Sources */,
 				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
+				FCE82A82294092CE00442771 /* UIApplication+Util.swift in Sources */,
 				FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */,
 				FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */,
 			);

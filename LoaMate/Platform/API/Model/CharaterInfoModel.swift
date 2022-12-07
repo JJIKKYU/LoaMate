@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharacterInfoModel: Decodable {
+public struct CharacterInfoModel: Decodable {
     let ServerName: String
     let CharacterName: String
     let CharacterLevel: Int

@@ -21,14 +21,24 @@ protocol MainListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
+protocol MainInteractorDependency {
+    var loaMateRepository: LoaMateRepository { get }
+}
+
 final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteractable, MainPresentableListener {
 
     weak var router: MainRouting?
     weak var listener: MainListener?
+    private let disposeBag = DisposeBag()
+    let dependency: MainInteractorDependency
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: MainPresentable) {
+    init(
+        presenter: MainPresentable,
+        dependency: MainInteractorDependency
+    ) {
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -36,10 +46,21 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
+        bind()
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func bind() {
+        dependency.loaMateRepository
+            .charactersInfoRelay
+            .subscribe(onNext: { [weak self] characters in
+                guard let self = self else { return }
+                print("Main :: Interactor -> characters -> \(characters)")
+            })
+            .disposed(by: disposeBag)
     }
 }

@@ -13,20 +13,21 @@ import RxRealm
 
 public protocol LoaMateRepository {
     // userEmail
-    var userEmail: BehaviorRelay<String> { get }
+    var userEmailRelay: BehaviorRelay<String> { get }
+    var charactersInfoRelay: BehaviorRelay<[CharacterInfoModel]> { get }
     func fetchEmail()
     func addEmail(email: String)
 }
 
 public final class LoaMateRepositoryImp: LoaMateRepository {
-    public var userEmail: BehaviorRelay<String> { userEmailSubject }
-    public let userEmailSubject = BehaviorRelay<String>(value: "")
+    public var userEmailRelay = BehaviorRelay<String>(value: "")
+    public var charactersInfoRelay = BehaviorRelay<[CharacterInfoModel]>(value: [])
     
     public func fetchEmail() {
         guard let realm = Realm.safeInit() else { return }
         
         guard let userEmial = realm.objects(UserEmail.self).first else { return }
-        userEmailSubject.accept(userEmial.userEmail)
+        userEmailRelay.accept(userEmial.userEmail)
     }
     
     public func addEmail(email: String) {
@@ -43,6 +44,6 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
             realm.add(userEmail)
         }
         
-        userEmailSubject.accept(email)
+        userEmailRelay.accept(userEmail.userEmail)
     }
 }
