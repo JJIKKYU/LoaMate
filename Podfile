@@ -18,6 +18,8 @@ target 'LoaMate' do
   pod 'Realm', '10.20.1'
   pod 'RealmSwift', '10.20.1'
   pod 'RxViewController'
+  pod 'Alamofire'
+  pod 'Moya', '~> 15.0'
 
   # Google
 #  pod 'FirebaseAnalytics'
