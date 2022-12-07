@@ -38,10 +38,13 @@ final class AppRootBuilder: Builder<AppRootDependency>, AppRootBuildable {
             presenter: viewController,
             dependency: component
         )
+        
+        let login = LoginBuilder(dependency: component)
 
         let router = AppRootRouter(
             interactor: interactor,
-            viewController: viewController
+            viewController: viewController,
+            login: login
         )
         
         return (router, interactor)

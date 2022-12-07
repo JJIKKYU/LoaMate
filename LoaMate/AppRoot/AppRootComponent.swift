@@ -11,17 +11,20 @@ import RIBs
 final class AppRootComponent: Component<AppRootDependency> {
 
     private let rootViewController: ViewControllable
+    var loaMateRepository: LoaMateRepository
     
     init(
         dependency: AppRootDependency,
         rootViewController: ViewControllable
     ) {
         self.rootViewController = rootViewController
+        self.loaMateRepository = LoaMateRepositoryImp()
+        self.loaMateRepository.fetchEmail()
         super.init(dependency: dependency)
     }
 }
 
-extension AppRootComponent: AppRootInteractorDependency
+extension AppRootComponent: AppRootInteractorDependency, LoginDependency, LoginInteractorDependency
 {
 
 }

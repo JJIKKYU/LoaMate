@@ -20,9 +20,9 @@ target 'LoaMate' do
   pod 'RxViewController'
 
   # Google
-  pod 'FirebaseAnalytics'
-  pod 'FirebaseAuth'
-  pod 'FirebaseFirestore'
+#  pod 'FirebaseAnalytics'
+#  pod 'FirebaseAuth'
+#  pod 'FirebaseFirestore'
 
   # then 문법 사용
   pod 'Then'

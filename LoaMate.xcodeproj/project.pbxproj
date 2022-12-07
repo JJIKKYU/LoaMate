@@ -28,6 +28,14 @@
 		FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */; };
 		FCE82A4C2940618C00442771 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A3929405EB000442771 /* AppRootRouter.swift */; };
 		FCE82A4E2940624C00442771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A4D2940624C00442771 /* GoogleService-Info.plist */; };
+		FCE82A5829406A4C00442771 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5429406A4C00442771 /* LoginRouter.swift */; };
+		FCE82A5929406A4C00442771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5529406A4C00442771 /* LoginViewController.swift */; };
+		FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5629406A4C00442771 /* LoginBuilder.swift */; };
+		FCE82A5B29406A4C00442771 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5729406A4C00442771 /* LoginInteractor.swift */; };
+		FCE82A5D29406E0900442771 /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5C29406E0900442771 /* AppleLoginManager.swift */; };
+		FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5F29407A4100442771 /* Realm+Util.swift */; };
+		FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6229407A7400442771 /* LoaMateRepository.swift */; };
+		FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6529407B2600442771 /* UserEmailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +87,14 @@
 		FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
 		FCE82A4D2940624C00442771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCE82A4F294064F400442771 /* LoaMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoaMate.entitlements; sourceTree = "<group>"; };
+		FCE82A5429406A4C00442771 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FCE82A5529406A4C00442771 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCE82A5629406A4C00442771 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		FCE82A5729406A4C00442771 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		FCE82A5C29406E0900442771 /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
+		FCE82A5F29407A4100442771 /* Realm+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Util.swift"; sourceTree = "<group>"; };
+		FCE82A6229407A7400442771 /* LoaMateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaMateRepository.swift; sourceTree = "<group>"; };
+		FCE82A6529407B2600442771 /* UserEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,10 +173,12 @@
 		FCE82A0429405A4800442771 /* LoaMate */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A3629405BFD00442771 /* AppRoot */,
+				FCE82A5229406A3900442771 /* Home */,
+				FCE82A5029406A1C00442771 /* Profile */,
 				FCE82A4F294064F400442771 /* LoaMate.entitlements */,
 				FCE82A4D2940624C00442771 /* GoogleService-Info.plist */,
 				FCE82A462940601100442771 /* Platform */,
-				FCE82A3629405BFD00442771 /* AppRoot */,
 				FCE82A3529405BE800442771 /* AppDelegate */,
 				FCE82A0B29405A4800442771 /* Main.storyboard */,
 				FCE82A0E29405A4900442771 /* Assets.xcassets */,
@@ -212,6 +230,7 @@
 		FCE82A462940601100442771 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A5E29407A3000442771 /* Service+Util */,
 				FCE82A472940601500442771 /* RIBs+Util */,
 			);
 			path = Platform;
@@ -224,6 +243,59 @@
 				FCE82A4A2940603300442771 /* AdaptivePresentationControllerDelegate.swift */,
 			);
 			path = "RIBs+Util";
+			sourceTree = "<group>";
+		};
+		FCE82A5029406A1C00442771 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FCE82A5229406A3900442771 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A6429407B1500442771 /* Model */,
+				FCE82A6129407A6400442771 /* Repository */,
+				FCE82A5329406A4100442771 /* Login */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCE82A5329406A4100442771 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A5429406A4C00442771 /* LoginRouter.swift */,
+				FCE82A5529406A4C00442771 /* LoginViewController.swift */,
+				FCE82A5629406A4C00442771 /* LoginBuilder.swift */,
+				FCE82A5729406A4C00442771 /* LoginInteractor.swift */,
+				FCE82A5C29406E0900442771 /* AppleLoginManager.swift */,
+				FCE82A6229407A7400442771 /* LoaMateRepository.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FCE82A5E29407A3000442771 /* Service+Util */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A5F29407A4100442771 /* Realm+Util.swift */,
+			);
+			path = "Service+Util";
+			sourceTree = "<group>";
+		};
+		FCE82A6129407A6400442771 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FCE82A6429407B1500442771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A6529407B2600442771 /* UserEmailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,14 +538,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE82A5929406A4C00442771 /* LoginViewController.swift in Sources */,
 				FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */,
+				FCE82A5B29406A4C00442771 /* LoginInteractor.swift in Sources */,
 				FCE82A492940602500442771 /* RIBs+Util.swift in Sources */,
 				FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */,
+				FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */,
 				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
+				FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */,
 				FCE82A3829405EA100442771 /* AppComponent.swift in Sources */,
+				FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */,
 				FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */,
 				FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */,
 				FCE82A4229405FA000442771 /* AppRootViewController.swift in Sources */,
+				FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */,
+				FCE82A5D29406E0900442771 /* AppleLoginManager.swift in Sources */,
+				FCE82A5829406A4C00442771 /* LoginRouter.swift in Sources */,
 				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
 			);
@@ -657,7 +737,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V237TD2AXA;
-				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoaMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -691,7 +770,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V237TD2AXA;
-				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoaMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

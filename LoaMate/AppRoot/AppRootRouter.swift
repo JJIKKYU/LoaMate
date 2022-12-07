@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol AppRootInteractable: Interactable
+protocol AppRootInteractable: Interactable, LoginListener
 {
     var router: AppRootRouting? { get set }
     var listener: AppRootListener? { get set }
@@ -21,13 +21,15 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
     
     var navigationController: NavigationControllerable?
 
-    // private var diaryHomeRouting: ViewableRouting?
+    private let login: LoginBuildable
+    private var loginRouting: ViewableRouting?
     
-    override init(
+    init(
         interactor: AppRootInteractable,
-        viewController: AppRootViewControllable
-        // diaryHome: DiaryHomeBuildable,
+        viewController: AppRootViewControllable,
+        login: LoginBuildable
     ) {
+        self.login = login
         // self.diaryHome = diaryHome
         
         super.init(interactor: interactor, viewController: viewController)
@@ -73,6 +75,12 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
 
         viewController.setViewController(navigation)
         */
+        let loginRouting = login.build(withListener: interactor)
+        attachChild(loginRouting)
+        
+        let navigation = NavigationControllerable(root: loginRouting.viewControllable)
+        navigation.navigationController.modalPresentationStyle = .fullScreen
+        viewController.setViewController(navigation)
     }
     
     func cleanupViews() {
