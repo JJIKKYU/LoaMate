@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol AppRootInteractable: Interactable, LoginListener
+protocol AppRootInteractable: Interactable, LoginListener, MainListener
 {
     var router: AppRootRouting? { get set }
     var listener: AppRootListener? { get set }
@@ -24,12 +24,17 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
     private let login: LoginBuildable
     private var loginRouting: ViewableRouting?
     
+    private let main: MainBuildable
+    private var mainRouting: ViewableRouting?
+    
     init(
         interactor: AppRootInteractable,
         viewController: AppRootViewControllable,
-        login: LoginBuildable
+        login: LoginBuildable,
+        main: MainBuildable
     ) {
         self.login = login
+        self.main = main
         // self.diaryHome = diaryHome
         
         super.init(interactor: interactor, viewController: viewController)
@@ -59,22 +64,16 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
         self.navigationController = nil
     }
     
-    func attachMainHome() {
-        /*
-        // let registerIDRouting = registerID.build(withListener: interactor)
-        let diaryHomeRouting = diaryHome.build(withListener: interactor)
+    func attachMain() {
+        let mainRouting = main.build(withListener: interactor)
+        attachChild(mainRouting)
         
-        // attachChild(diaryWritingRouting)
-        // attachChild(registerHomeRouting)
-        
-        // attachChild(registerHomeRouting)
-        // attachChild(loginHomeRouting)
-        attachChild(diaryHomeRouting)
-        let navigation = NavigationControllerable(root: diaryHomeRouting.viewControllable)
+        let navigation = NavigationControllerable(root: mainRouting.viewControllable)
         navigation.navigationController.modalPresentationStyle = .fullScreen
-
         viewController.setViewController(navigation)
-        */
+    }
+    
+    func attachLogin() {
         let loginRouting = login.build(withListener: interactor)
         attachChild(loginRouting)
         

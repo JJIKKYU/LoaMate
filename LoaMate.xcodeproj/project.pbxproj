@@ -36,6 +36,14 @@
 		FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A5F29407A4100442771 /* Realm+Util.swift */; };
 		FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6229407A7400442771 /* LoaMateRepository.swift */; };
 		FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6529407B2600442771 /* UserEmailModel.swift */; };
+		FCE82A692940842A00442771 /* LostarkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A682940842A00442771 /* LostarkAPI.swift */; };
+		FCE82A6B2940876700442771 /* CharaterInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6A2940876700442771 /* CharaterInfoModel.swift */; };
+		FCE82A7229408C7900442771 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6E29408C7900442771 /* MainRouter.swift */; };
+		FCE82A7329408C7900442771 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A6F29408C7900442771 /* MainViewController.swift */; };
+		FCE82A7429408C7900442771 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7029408C7900442771 /* MainBuilder.swift */; };
+		FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7129408C7900442771 /* MainInteractor.swift */; };
+		FCE82A7A29408DBA00442771 /* BoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7929408DBA00442771 /* BoxButton.swift */; };
+		FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +103,14 @@
 		FCE82A5F29407A4100442771 /* Realm+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Util.swift"; sourceTree = "<group>"; };
 		FCE82A6229407A7400442771 /* LoaMateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaMateRepository.swift; sourceTree = "<group>"; };
 		FCE82A6529407B2600442771 /* UserEmailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailModel.swift; sourceTree = "<group>"; };
+		FCE82A682940842A00442771 /* LostarkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostarkAPI.swift; sourceTree = "<group>"; };
+		FCE82A6A2940876700442771 /* CharaterInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaterInfoModel.swift; sourceTree = "<group>"; };
+		FCE82A6E29408C7900442771 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		FCE82A6F29408C7900442771 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FCE82A7029408C7900442771 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
+		FCE82A7129408C7900442771 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		FCE82A7929408DBA00442771 /* BoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButton.swift; sourceTree = "<group>"; };
+		FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmoryProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +189,8 @@
 		FCE82A0429405A4800442771 /* LoaMate */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A6D29408C6000442771 /* Register */,
+				FCE82A672940840C00442771 /* API */,
 				FCE82A3629405BFD00442771 /* AppRoot */,
 				FCE82A5229406A3900442771 /* Home */,
 				FCE82A5029406A1C00442771 /* Profile */,
@@ -230,6 +248,7 @@
 		FCE82A462940601100442771 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A7729408DAA00442771 /* DesignSystem */,
 				FCE82A5E29407A3000442771 /* Service+Util */,
 				FCE82A472940601500442771 /* RIBs+Util */,
 			);
@@ -255,9 +274,9 @@
 		FCE82A5229406A3900442771 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FCE82A6C29408C5400442771 /* Main */,
 				FCE82A6429407B1500442771 /* Model */,
 				FCE82A6129407A6400442771 /* Repository */,
-				FCE82A5329406A4100442771 /* Login */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -296,6 +315,59 @@
 				FCE82A6529407B2600442771 /* UserEmailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FCE82A672940840C00442771 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A682940842A00442771 /* LostarkAPI.swift */,
+				FCE82A6A2940876700442771 /* CharaterInfoModel.swift */,
+				FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FCE82A6C29408C5400442771 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A6E29408C7900442771 /* MainRouter.swift */,
+				FCE82A6F29408C7900442771 /* MainViewController.swift */,
+				FCE82A7029408C7900442771 /* MainBuilder.swift */,
+				FCE82A7129408C7900442771 /* MainInteractor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FCE82A6D29408C6000442771 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A5329406A4100442771 /* Login */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FCE82A7729408DAA00442771 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A7D294090F500442771 /* NaviView */,
+				FCE82A7829408DB100442771 /* BoxButton */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		FCE82A7829408DB100442771 /* BoxButton */ = {
+			isa = PBXGroup;
+			children = (
+				FCE82A7929408DBA00442771 /* BoxButton.swift */,
+			);
+			path = BoxButton;
+			sourceTree = "<group>";
+		};
+		FCE82A7D294090F500442771 /* NaviView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NaviView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,14 +610,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE82A692940842A00442771 /* LostarkAPI.swift in Sources */,
+				FCE82A7329408C7900442771 /* MainViewController.swift in Sources */,
 				FCE82A5929406A4C00442771 /* LoginViewController.swift in Sources */,
 				FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */,
 				FCE82A5B29406A4C00442771 /* LoginInteractor.swift in Sources */,
 				FCE82A492940602500442771 /* RIBs+Util.swift in Sources */,
+				FCE82A7429408C7900442771 /* MainBuilder.swift in Sources */,
 				FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */,
 				FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */,
 				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
+				FCE82A7229408C7900442771 /* MainRouter.swift in Sources */,
 				FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */,
+				FCE82A7A29408DBA00442771 /* BoxButton.swift in Sources */,
 				FCE82A3829405EA100442771 /* AppComponent.swift in Sources */,
 				FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */,
 				FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */,
@@ -554,8 +631,11 @@
 				FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */,
 				FCE82A5D29406E0900442771 /* AppleLoginManager.swift in Sources */,
 				FCE82A5829406A4C00442771 /* LoginRouter.swift in Sources */,
+				FCE82A6B2940876700442771 /* CharaterInfoModel.swift in Sources */,
 				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
+				FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */,
+				FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
