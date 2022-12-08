@@ -14,6 +14,7 @@ import RxRelay
 
 protocol SetCharactersPresentableListener: AnyObject {
     func pressedBackBtn(isOnlyDetach: Bool)
+    func pressedConfimBtn()
     var charactersInfoRelay: BehaviorRelay<[CharacterInfoModel]> { get }
     var selectedCharacterArrRelay: BehaviorRelay<[CharacterInfoModel]> { get }
 }
@@ -46,7 +47,7 @@ final class SetCharactersViewController: UIViewController, SetCharactersPresenta
         $0.rowHeight = 45
         $0.register(SetCharactersCell.self, forCellReuseIdentifier: "SetCharactersCell")
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .white
+        $0.backgroundColor = .clear
         $0.delegate = self
         $0.dataSource = self
     }
@@ -144,7 +145,7 @@ extension SetCharactersViewController {
     
     @objc
     func pressedConfirmBtn() {
-        
+        listener?.pressedConfimBtn()
     }
 }
 

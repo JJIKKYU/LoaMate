@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.urlHandler = result.urlHandler
         
         launchRouter?.launch(from: window)
+        let realm = Realm.safeInit()
+        print("Realm Location = \(String(describing: realm?.configuration.fileURL))")
 
         return true
     }

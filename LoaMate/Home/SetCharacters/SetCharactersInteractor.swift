@@ -20,6 +20,7 @@ protocol SetCharactersPresentable: Presentable {
 
 protocol SetCharactersListener: AnyObject {
     func SetCharactersPressedBackBtn(isOnlyDetach: Bool)
+    func completeSetCharacters()
 }
 
 protocol SetCharactersInteractorDependency {
@@ -78,5 +79,13 @@ final class SetCharactersInteractor: PresentableInteractor<SetCharactersPresenta
     
     func pressedBackBtn(isOnlyDetach: Bool) {
         listener?.SetCharactersPressedBackBtn(isOnlyDetach: isOnlyDetach)
+    }
+    
+    func pressedConfimBtn() {
+        // 각 캐릭터별 세팅부터
+        dependency.loaMateRepository
+            .saveUserData(mainCharacterName: userNickname, selectedCharacterArr: selectedCharacterArrRelay.value)
+        
+        listener?.completeSetCharacters()
     }
 }

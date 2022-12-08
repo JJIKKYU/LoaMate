@@ -22,6 +22,7 @@ protocol InputCharacterPresentable: Presentable {
 
 protocol InputCharacterListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func completeSetCharacters()
 }
 
 final class InputCharacterInteractor: PresentableInteractor<InputCharacterPresentable>, InputCharacterInteractable, InputCharacterPresentableListener {
@@ -54,5 +55,10 @@ final class InputCharacterInteractor: PresentableInteractor<InputCharacterPresen
     
     func SetCharactersPressedBackBtn(isOnlyDetach: Bool) {
         router?.detachSetCharacters(isOnlyDetach: isOnlyDetach)
+    }
+    
+    func completeSetCharacters() {
+        router?.detachSetCharacters(isOnlyDetach: true)
+        listener?.completeSetCharacters()
     }
 }

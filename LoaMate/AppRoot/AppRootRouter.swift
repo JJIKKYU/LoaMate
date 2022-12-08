@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol AppRootInteractable: Interactable, LoginListener, MainListener, InputCharacterListener
+protocol AppRootInteractable: Interactable, LoginListener, MainListener
 {
     var router: AppRootRouting? { get set }
     var listener: AppRootListener? { get set }
@@ -27,19 +27,19 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
     private let main: MainBuildable
     private var mainRouting: ViewableRouting?
     
-    private let inputCharacter: InputCharacterBuildable
-    private var inputCharacterRouting: ViewableRouting?
+//    private let inputCharacter: InputCharacterBuildable
+//    private var inputCharacterRouting: ViewableRouting?
     
     init(
         interactor: AppRootInteractable,
         viewController: AppRootViewControllable,
         login: LoginBuildable,
-        main: MainBuildable,
-        inputChracter: InputCharacterBuildable
+        main: MainBuildable
+        // inputChracter: InputCharacterBuildable
     ) {
         self.login = login
         self.main = main
-        self.inputCharacter = inputChracter
+        // self.inputCharacter = inputChracter
         // self.diaryHome = diaryHome
         
         super.init(interactor: interactor, viewController: viewController)
@@ -75,6 +75,7 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
         
         let navigation = NavigationControllerable(root: mainRouting.viewControllable)
         navigation.navigationController.modalPresentationStyle = .fullScreen
+
         viewController.setViewController(navigation)
     }
     
@@ -87,14 +88,14 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
         viewController.setViewController(navigation)
     }
     
-    func attachInputCharacter() {
-        let inputChracterRouting = inputCharacter.build(withListener: interactor)
-        attachChild(inputChracterRouting)
-        
-        let navigation = NavigationControllerable(root: inputChracterRouting.viewControllable)
-        navigation.navigationController.modalPresentationStyle = .fullScreen
-        viewController.setViewController(navigation)
-    }
+//    func attachInputCharacter() {
+//        let inputChracterRouting = inputCharacter.build(withListener: interactor)
+//        attachChild(inputChracterRouting)
+//
+//        let navigation = NavigationControllerable(root: inputChracterRouting.viewControllable)
+//        navigation.navigationController.modalPresentationStyle = .fullScreen
+//        viewController.setViewController(navigation)
+//    }
     
     func cleanupViews() {
         // TODO: Since this router does not own its view, it needs to cleanup the views

@@ -13,7 +13,7 @@ protocol LoginDependency: Dependency {
     var loaMateRepository: LoaMateRepository { get }
 }
 
-final class LoginComponent: Component<LoginDependency>, LoginInteractorDependency {
+final class LoginComponent: Component<LoginDependency>, LoginInteractorDependency, MainDependency {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
     var loaMateRepository: LoaMateRepository { dependency.loaMateRepository }
@@ -39,6 +39,12 @@ final class LoginBuilder: Builder<LoginDependency>, LoginBuildable {
             dependency: component
         )
         interactor.listener = listener
-        return LoginRouter(interactor: interactor, viewController: viewController)
+        
+        let main = MainBuilder(dependency: component)
+        return LoginRouter(
+            interactor: interactor,
+            viewController: viewController,
+            main: main
+        )
     }
 }

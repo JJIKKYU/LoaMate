@@ -72,6 +72,13 @@ enum Colors {
             light: UIColor(red: 0.5291666388511658, green: 0.5291666388511658, blue: 0.5291666388511658, alpha: 1)
         )
     }
+
+    static var abr: UIColor {
+        return color(
+            dark: UIColor(red: 0.5178738236427307, green: 0.4955555498600006, blue: 0.9291666746139526, alpha: 1),
+            light: UIColor(red: 0.5178738236427307, green: 0.4955555498600006, blue: 0.9291666746139526, alpha: 1)
+        )
+    }
 }
 
 extension Colors {

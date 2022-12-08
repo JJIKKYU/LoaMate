@@ -28,8 +28,15 @@
 		985BFFCF2941B54F00D86106 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFCE2941B53700D86106 /* AppleSDGothicNeoH.ttf */; };
 		985BFFD02941B54F00D86106 /* Montserrat ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFB7294197C400D86106 /* Montserrat ExtraBold.ttf */; };
 		985BFFD12941B54F00D86106 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFCD2941B53700D86106 /* AppleSDGothicNeoEB.ttf */; };
+		985BFFD32941EC6300D86106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFD22941EC6300D86106 /* Main.storyboard */; };
+		985BFFD52941EEEB00D86106 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFD42941EEEB00D86106 /* MainCell.swift */; };
+		985BFFD72941EF6B00D86106 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFD62941EF6B00D86106 /* Shadow.swift */; };
+		985BFFD92942037900D86106 /* Label+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFD82942037900D86106 /* Label+Util.swift */; };
+		985BFFDF294225AB00D86106 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDB294225AB00D86106 /* DetailRouter.swift */; };
+		985BFFE0294225AB00D86106 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDC294225AB00D86106 /* DetailViewController.swift */; };
+		985BFFE1294225AB00D86106 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDD294225AB00D86106 /* DetailBuilder.swift */; };
+		985BFFE2294225AB00D86106 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDE294225AB00D86106 /* DetailInteractor.swift */; };
 		FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A0529405A4800442771 /* AppDelegate.swift */; };
-		FCE82A0D29405A4800442771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0B29405A4800442771 /* Main.storyboard */; };
 		FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0E29405A4900442771 /* Assets.xcassets */; };
 		FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A1029405A4900442771 /* LaunchScreen.storyboard */; };
 		FCE82A1D29405A4A00442771 /* LoaMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A1C29405A4A00442771 /* LoaMateTests.swift */; };
@@ -107,12 +114,19 @@
 		985BFFCB2941AE7700D86106 /* SetCharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersCell.swift; sourceTree = "<group>"; };
 		985BFFCD2941B53700D86106 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		985BFFCE2941B53700D86106 /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoH.ttf; sourceTree = "<group>"; };
+		985BFFD22941EC6300D86106 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		985BFFD42941EEEB00D86106 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		985BFFD62941EF6B00D86106 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		985BFFD82942037900D86106 /* Label+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Util.swift"; sourceTree = "<group>"; };
+		985BFFDB294225AB00D86106 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		985BFFDC294225AB00D86106 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		985BFFDD294225AB00D86106 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		985BFFDE294225AB00D86106 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.release.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate-LoaMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMate_LoaMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE82A0229405A4800442771 /* LoaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE82A0529405A4800442771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCE82A0C29405A4800442771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCE82A0E29405A4900442771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCE82A1129405A4900442771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCE82A1329405A4900442771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -253,6 +267,17 @@
 			path = SetCharacters;
 			sourceTree = "<group>";
 		};
+		985BFFDA294225A000D86106 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFDB294225AB00D86106 /* DetailRouter.swift */,
+				985BFFDC294225AB00D86106 /* DetailViewController.swift */,
+				985BFFDD294225AB00D86106 /* DetailBuilder.swift */,
+				985BFFDE294225AB00D86106 /* DetailInteractor.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		CF3A0D6FCF1CB9C59994CC01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,10 +321,10 @@
 				FCE82A4D2940624C00442771 /* GoogleService-Info.plist */,
 				FCE82A462940601100442771 /* Platform */,
 				FCE82A3529405BE800442771 /* AppDelegate */,
-				FCE82A0B29405A4800442771 /* Main.storyboard */,
 				FCE82A0E29405A4900442771 /* Assets.xcassets */,
 				FCE82A1029405A4900442771 /* LaunchScreen.storyboard */,
 				FCE82A1329405A4900442771 /* Info.plist */,
+				985BFFD22941EC6300D86106 /* Main.storyboard */,
 			);
 			path = LoaMate;
 			sourceTree = "<group>";
@@ -368,6 +393,7 @@
 		FCE82A5229406A3900442771 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				985BFFDA294225A000D86106 /* Detail */,
 				985BFFC22941A3A300D86106 /* SetCharacters */,
 				985BFFB12941932700D86106 /* InputCharacter */,
 				FCE82A6C29408C5400442771 /* Main */,
@@ -392,6 +418,8 @@
 			children = (
 				FCE82A5F29407A4100442771 /* Realm+Util.swift */,
 				FCE82A81294092CD00442771 /* UIApplication+Util.swift */,
+				985BFFD62941EF6B00D86106 /* Shadow.swift */,
+				985BFFD82942037900D86106 /* Label+Util.swift */,
 			);
 			path = "Service+Util";
 			sourceTree = "<group>";
@@ -429,6 +457,7 @@
 				FCE82A6F29408C7900442771 /* MainViewController.swift */,
 				FCE82A7029408C7900442771 /* MainBuilder.swift */,
 				FCE82A7129408C7900442771 /* MainInteractor.swift */,
+				985BFFD42941EEEB00D86106 /* MainCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -580,9 +609,9 @@
 				FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */,
 				FCE82A4E2940624C00442771 /* GoogleService-Info.plist in Resources */,
 				985BFFD12941B54F00D86106 /* AppleSDGothicNeoEB.ttf in Resources */,
+				985BFFD32941EC6300D86106 /* Main.storyboard in Resources */,
 				985BFFCF2941B54F00D86106 /* AppleSDGothicNeoH.ttf in Resources */,
 				FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */,
-				FCE82A0D29405A4800442771 /* Main.storyboard in Resources */,
 				985BFFB52941975500D86106 /* Icons.xcassets in Resources */,
 				985BFFD02941B54F00D86106 /* Montserrat ExtraBold.ttf in Resources */,
 			);
@@ -738,11 +767,15 @@
 				FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */,
 				FCE82A5B29406A4C00442771 /* LoginInteractor.swift in Sources */,
 				985BFFBF29419CDA00D86106 /* NaviView.swift in Sources */,
+				985BFFD52941EEEB00D86106 /* MainCell.swift in Sources */,
 				FCE82A492940602500442771 /* RIBs+Util.swift in Sources */,
 				985BFFAF2941931D00D86106 /* InputCharacterBuilder.swift in Sources */,
 				FCE82A7429408C7900442771 /* MainBuilder.swift in Sources */,
 				FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */,
+				985BFFD72941EF6B00D86106 /* Shadow.swift in Sources */,
 				FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */,
+				985BFFE2294225AB00D86106 /* DetailInteractor.swift in Sources */,
+				985BFFDF294225AB00D86106 /* DetailRouter.swift in Sources */,
 				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
 				FCE82A7229408C7900442771 /* MainRouter.swift in Sources */,
 				FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */,
@@ -752,11 +785,13 @@
 				FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */,
 				985BFFB02941931D00D86106 /* InputCharacterInteractor.swift in Sources */,
 				985BFFAD2941931D00D86106 /* InputCharacterRouter.swift in Sources */,
+				985BFFE0294225AB00D86106 /* DetailViewController.swift in Sources */,
 				FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */,
 				FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */,
 				FCE82A4229405FA000442771 /* AppRootViewController.swift in Sources */,
 				985BFFC72941A3B200D86106 /* SetCharactersRouter.swift in Sources */,
 				985BFFBB294199AC00D86106 /* Icons+Generated.swift in Sources */,
+				985BFFE1294225AB00D86106 /* DetailBuilder.swift in Sources */,
 				FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */,
 				FCE82A5D29406E0900442771 /* AppleLoginManager.swift in Sources */,
 				FCE82A5829406A4C00442771 /* LoginRouter.swift in Sources */,
@@ -764,6 +799,7 @@
 				985BFFCA2941A3B200D86106 /* SetCharactersInteractor.swift in Sources */,
 				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				985BFFCC2941AE7800D86106 /* SetCharactersCell.swift in Sources */,
+				985BFFD92942037900D86106 /* Label+Util.swift in Sources */,
 				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
 				985BFFC92941A3B200D86106 /* SetCharactersBuilder.swift in Sources */,
 				FCE82A82294092CE00442771 /* UIApplication+Util.swift in Sources */,
@@ -808,14 +844,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCE82A0B29405A4800442771 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCE82A0C29405A4800442771 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCE82A1029405A4900442771 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -948,6 +976,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = LoaMate/LoaMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -955,11 +984,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoaMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -981,6 +1008,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = LoaMate/LoaMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -988,11 +1016,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoaMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

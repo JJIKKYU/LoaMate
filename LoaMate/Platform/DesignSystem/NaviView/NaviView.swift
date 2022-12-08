@@ -29,6 +29,7 @@ class NaviView: UIView {
         $0.image = image
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.isHidden = true
+        $0.contentMode = .scaleAspectFit
     }
     
     var backButton = UIButton().then {
@@ -108,8 +109,8 @@ class NaviView: UIView {
 
         titleImage.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
-            make.width.equalTo(139)
-            make.height.equalTo(24)
+            make.width.equalTo(129)
+            make.height.equalTo(29)
             make.bottom.equalToSuperview().inset(14)
         }
         
@@ -138,7 +139,9 @@ class NaviView: UIView {
         switch naviViewType {
         case .main:
             rightButton1.isHidden = false
-            rightButton2.isHidden = false
+            rightButton1.setImage(Asset.setting.image.withRenderingMode(.alwaysTemplate), for: .normal)
+            rightButton1.tintColor = Colors.tintColor
+            rightButton2.isHidden = true
             titleImage.isHidden = false
         case .inputCharacter:
             titleImage.isHidden = true
@@ -157,7 +160,7 @@ class NaviView: UIView {
             
         case .detail:
             titleLabel.isHidden = true
-            backButton.isHidden = true
+            backButton.isHidden = false
             backButton.tintColor = Colors.textColor
             backButton.setImage(Asset.Arrow.back.image.withRenderingMode(.alwaysTemplate), for: .normal)
             backgroundColor = .clear

@@ -15,7 +15,6 @@ import Moya
 protocol AppRootRouting: Routing {
     func cleanupViews()
     func attachMain()
-    func attachInputCharacter()
     func attachLogin()
 }
 
@@ -47,6 +46,8 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
     weak var listener: AppRootListener?
     private let disposeBag = DisposeBag()
     private let dependency: AppRootInteractorDependency
+    
+    var isFirstCheck: Bool = true
 
     // in constructor.
     init(
@@ -78,13 +79,13 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
 //            case .success(let response):
 //                let result = try? response.map([CharacterInfoModel].self)
 //                print("sucess! = \(response.description), result = \(result)")
-//                
+//
 //                if let result = result {
 //                    self.dependency.loaMateRepository
 //                        .charactersInfoRelay.accept(result)
 //                }
-//                
-//                
+//
+//
 //            case .failure(let error):
 //                print("error = \(error.localizedDescription)")
 //            }
@@ -106,52 +107,18 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
         dependency.loaMateRepository
             .userEmailRelay.subscribe(onNext: { [weak self] email in
                 guard let self = self else { return }
+                if self.isFirstCheck == false { return }
                 print("AppRoot :: email! = \(email)")
                 if email == "" {
                     self.router?.attachLogin()
+                    self.isFirstCheck = false
                 } else {
-                    self.getUserEmailKeyChain(email: email)
-                    // self.router?.attachMain()
-                    self.router?.attachInputCharacter()
+                    self.router?.attachMain()
+                    self.isFirstCheck = false
                     print("AppRoot :: 로그인 체크 ㄲ")
                 }
             })
             .disposed(by: disposeBag)
-    }
-    
-    func getUserEmailKeyChain(email: String) {
-        let getQuery: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
-                                          kSecAttrAccount: email,
-                                          kSecReturnAttributes: true,
-                                          kSecReturnData: true]
-        var item: CFTypeRef?
-        let result = SecItemCopyMatching(getQuery as CFDictionary, &item)
-
-        if result == errSecSuccess {
-            if let existingItem = item as? [String: Any],
-               let data = existingItem[kSecValueData as String] as? Data,
-               let password = String(data: data, encoding: .utf8) {
-                print("이거? = \(password)")
-                self.checkUserIdentifier(identifier: password)
-            }
-        }
-    }
-    
-    func checkUserIdentifier(identifier: String) {
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        appleIDProvider.getCredentialState(forUserID: identifier) { (credentialState, error) in
-            switch credentialState {
-            case .authorized:
-                //인증성공 상태
-                print("AppRoot :: 인증 성공 상태!")
-            case .revoked:
-                //인증만료 상태
-                print("AppRoot :: 인증만료 상태")
-            default:
-                print("AppRoot :: 인증 그 외 상태!")
-                //.notFound 등 이외 상태
-            }
-        }
     }
 }
 

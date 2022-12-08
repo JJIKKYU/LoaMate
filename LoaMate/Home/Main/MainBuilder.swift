@@ -11,7 +11,7 @@ protocol MainDependency: Dependency {
     var loaMateRepository: LoaMateRepository { get }
 }
 
-final class MainComponent: Component<MainDependency>, MainInteractorDependency {
+final class MainComponent: Component<MainDependency>, MainInteractorDependency, InputCharacterDependency, DetailDependency {
     var loaMateRepository: LoaMateRepository { dependency.loaMateRepository }
 }
 
@@ -30,12 +30,21 @@ final class MainBuilder: Builder<MainDependency>, MainBuildable {
     func build(withListener listener: MainListener) -> MainRouting {
         let component = MainComponent(dependency: dependency)
         let viewController = MainViewController()
+        
         let interactor = MainInteractor(
             presenter: viewController,
             dependency: component
         )
+        
+        let inputCharacter = InputCharacterBuilder(dependency: component)
+        let detail = DetailBuilder(dependency: component)
     
         interactor.listener = listener
-        return MainRouter(interactor: interactor, viewController: viewController)
+        return MainRouter(
+            interactor: interactor,
+            viewController: viewController,
+            inputChracter: inputCharacter,
+            detail: detail
+        )
     }
 }

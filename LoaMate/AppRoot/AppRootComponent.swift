@@ -24,7 +24,7 @@ final class AppRootComponent: Component<AppRootDependency> {
     }
 }
 
-extension AppRootComponent: AppRootInteractorDependency, LoginDependency, LoginInteractorDependency, MainDependency, MainInteractorDependency, InputCharacterDependency
+extension AppRootComponent: AppRootInteractorDependency, LoginDependency, LoginInteractorDependency, MainDependency, MainInteractorDependency
 {
 
 }

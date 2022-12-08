@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArmoryProfileModel: Codable {
+public struct ArmoryProfileModel: Codable {
     let CharacterImage: String
     let ExpeditionLevel: Int
     let PvpGradeName: String
