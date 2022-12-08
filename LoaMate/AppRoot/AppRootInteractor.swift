@@ -15,6 +15,7 @@ import Moya
 protocol AppRootRouting: Routing {
     func cleanupViews()
     func attachMain()
+    func attachInputCharacter()
     func attachLogin()
 }
 
@@ -71,34 +72,34 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
     }
     
     func testMoya() {
-        let provider = MoyaProvider<LostarkAPI>()
-        provider.request(.characters(characterName: "찌뀨뀨")) { result in
-            switch result {
-            case .success(let response):
-                let result = try? response.map([CharacterInfoModel].self)
-                print("sucess! = \(response.description), result = \(result)")
-                
-                if let result = result {
-                    self.dependency.loaMateRepository
-                        .charactersInfoRelay.accept(result)
-                }
-                
-                
-            case .failure(let error):
-                print("error = \(error.localizedDescription)")
-            }
-        }
+//        let provider = MoyaProvider<LostarkAPI>()
+//        provider.request(.characters(characterName: "찌뀨뀨")) { result in
+//            switch result {
+//            case .success(let response):
+//                let result = try? response.map([CharacterInfoModel].self)
+//                print("sucess! = \(response.description), result = \(result)")
+//                
+//                if let result = result {
+//                    self.dependency.loaMateRepository
+//                        .charactersInfoRelay.accept(result)
+//                }
+//                
+//                
+//            case .failure(let error):
+//                print("error = \(error.localizedDescription)")
+//            }
+//        }
         
-        provider.request(.profiles(characterName: "찌뀨뀨")) { result in
-            switch result {
-            case .success(let response):
-                let result = try? response.map(ArmoryProfileModel.self)
-                print("sucess! = \(response.description), result = \(result)")
-                
-            case .failure(let error):
-                print("error = \(error.localizedDescription)")
-            }
-        }
+//        provider.request(.profiles(characterName: "찌뀨뀨")) { result in
+//            switch result {
+//            case .success(let response):
+//                let result = try? response.map(ArmoryProfileModel.self)
+//                print("sucess! = \(response.description), result = \(result)")
+//
+//            case .failure(let error):
+//                print("error = \(error.localizedDescription)")
+//            }
+//        }
     }
     
     func bind() {
@@ -110,7 +111,8 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>,
                     self.router?.attachLogin()
                 } else {
                     self.getUserEmailKeyChain(email: email)
-                    self.router?.attachMain()
+                    // self.router?.attachMain()
+                    self.router?.attachInputCharacter()
                     print("AppRoot :: 로그인 체크 ㄲ")
                 }
             })

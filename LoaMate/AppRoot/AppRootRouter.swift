@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol AppRootInteractable: Interactable, LoginListener, MainListener
+protocol AppRootInteractable: Interactable, LoginListener, MainListener, InputCharacterListener
 {
     var router: AppRootRouting? { get set }
     var listener: AppRootListener? { get set }
@@ -27,14 +27,19 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
     private let main: MainBuildable
     private var mainRouting: ViewableRouting?
     
+    private let inputCharacter: InputCharacterBuildable
+    private var inputCharacterRouting: ViewableRouting?
+    
     init(
         interactor: AppRootInteractable,
         viewController: AppRootViewControllable,
         login: LoginBuildable,
-        main: MainBuildable
+        main: MainBuildable,
+        inputChracter: InputCharacterBuildable
     ) {
         self.login = login
         self.main = main
+        self.inputCharacter = inputChracter
         // self.diaryHome = diaryHome
         
         super.init(interactor: interactor, viewController: viewController)
@@ -78,6 +83,15 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
         attachChild(loginRouting)
         
         let navigation = NavigationControllerable(root: loginRouting.viewControllable)
+        navigation.navigationController.modalPresentationStyle = .fullScreen
+        viewController.setViewController(navigation)
+    }
+    
+    func attachInputCharacter() {
+        let inputChracterRouting = inputCharacter.build(withListener: interactor)
+        attachChild(inputChracterRouting)
+        
+        let navigation = NavigationControllerable(root: inputChracterRouting.viewControllable)
         navigation.navigationController.modalPresentationStyle = .fullScreen
         viewController.setViewController(navigation)
     }

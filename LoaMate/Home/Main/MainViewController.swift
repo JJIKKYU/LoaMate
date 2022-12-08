@@ -32,7 +32,6 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
     
     private let charactersBtn = BoxButton(frame: CGRect.zero, btnStatus: .active, btnSize: .xLarge).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.isFiltered = .disabled
         $0.title = "캐릭터 불러오기"
         $0.btnSelected = false
     }
@@ -69,4 +68,5 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
             make.bottom.equalToSuperview()
         }
     }
+
 }

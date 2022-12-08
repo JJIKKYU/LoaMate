@@ -10,6 +10,7 @@ import RxSwift
 import RxRelay
 import RealmSwift
 import RxRealm
+import Moya
 
 public protocol LoaMateRepository {
     // userEmail
@@ -17,9 +18,13 @@ public protocol LoaMateRepository {
     var charactersInfoRelay: BehaviorRelay<[CharacterInfoModel]> { get }
     func fetchEmail()
     func addEmail(email: String)
+    
+    // API
+    func searchCharacters(userNickname: String)
 }
 
 public final class LoaMateRepositoryImp: LoaMateRepository {
+    private let provider = MoyaProvider<LostarkAPI>()
     public var userEmailRelay = BehaviorRelay<String>(value: "")
     public var charactersInfoRelay = BehaviorRelay<[CharacterInfoModel]>(value: [])
     
@@ -45,5 +50,23 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
         }
         
         userEmailRelay.accept(userEmail.userEmail)
+    }
+    
+    public func searchCharacters(userNickname: String) {
+        provider.request(.characters(characterName: userNickname)) { result in
+            switch result {
+            case .success(let response):
+                let result = try? response.map([CharacterInfoModel].self)
+                print("sucess! = \(response.description), result = \(result)")
+                
+                if let result = result {
+                    self.charactersInfoRelay.accept(result)
+                }
+                
+                
+            case .failure(let error):
+                print("error = \(error.localizedDescription)")
+            }
+        }
     }
 }

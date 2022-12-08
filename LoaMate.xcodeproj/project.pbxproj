@@ -10,6 +10,24 @@
 		116BEAD2D160923660177ED3 /* Pods_LoaMate_LoaMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */; };
 		225C3DC9295AD31208FCCFFB /* Pods_LoaMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0789A23B7BC3E28FE85C6348 /* Pods_LoaMateTests.framework */; };
 		40150E539080AB53F57EC287 /* Pods_LoaMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156EBA8B854B9CA8F54FC547 /* Pods_LoaMate.framework */; };
+		985BFFA82940A71800D86106 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFA72940A71800D86106 /* UserData.swift */; };
+		985BFFAD2941931D00D86106 /* InputCharacterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFA92941931D00D86106 /* InputCharacterRouter.swift */; };
+		985BFFAE2941931D00D86106 /* InputCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFAA2941931D00D86106 /* InputCharacterViewController.swift */; };
+		985BFFAF2941931D00D86106 /* InputCharacterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFAB2941931D00D86106 /* InputCharacterBuilder.swift */; };
+		985BFFB02941931D00D86106 /* InputCharacterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFAC2941931D00D86106 /* InputCharacterInteractor.swift */; };
+		985BFFB52941975500D86106 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFB42941975500D86106 /* Icons.xcassets */; };
+		985BFFBB294199AC00D86106 /* Icons+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFBA294199AC00D86106 /* Icons+Generated.swift */; };
+		985BFFBD29419C8E00D86106 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFBC29419C8E00D86106 /* Colors.swift */; };
+		985BFFBF29419CDA00D86106 /* NaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFBE29419CDA00D86106 /* NaviView.swift */; };
+		985BFFC129419D8500D86106 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFC029419D8500D86106 /* Fonts.swift */; };
+		985BFFC72941A3B200D86106 /* SetCharactersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFC32941A3B200D86106 /* SetCharactersRouter.swift */; };
+		985BFFC82941A3B200D86106 /* SetCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFC42941A3B200D86106 /* SetCharactersViewController.swift */; };
+		985BFFC92941A3B200D86106 /* SetCharactersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFC52941A3B200D86106 /* SetCharactersBuilder.swift */; };
+		985BFFCA2941A3B200D86106 /* SetCharactersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFC62941A3B200D86106 /* SetCharactersInteractor.swift */; };
+		985BFFCC2941AE7800D86106 /* SetCharactersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFCB2941AE7700D86106 /* SetCharactersCell.swift */; };
+		985BFFCF2941B54F00D86106 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFCE2941B53700D86106 /* AppleSDGothicNeoH.ttf */; };
+		985BFFD02941B54F00D86106 /* Montserrat ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFB7294197C400D86106 /* Montserrat ExtraBold.ttf */; };
+		985BFFD12941B54F00D86106 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 985BFFCD2941B53700D86106 /* AppleSDGothicNeoEB.ttf */; };
 		FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A0529405A4800442771 /* AppDelegate.swift */; };
 		FCE82A0D29405A4800442771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0B29405A4800442771 /* Main.storyboard */; };
 		FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0E29405A4900442771 /* Assets.xcassets */; };
@@ -71,6 +89,24 @@
 		54FCBF1EAC85AB6CE8D9FAAC /* Pods-LoaMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate.release.xcconfig"; path = "Target Support Files/Pods-LoaMate/Pods-LoaMate.release.xcconfig"; sourceTree = "<group>"; };
 		8A142573678A7CE02BBDFBA0 /* Pods-LoaMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate/Pods-LoaMate.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA716B73D7F6C61F6303D02 /* Pods-LoaMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		985BFFA72940A71800D86106 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		985BFFA92941931D00D86106 /* InputCharacterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputCharacterRouter.swift; path = LoaMate/Home/InputCharacter/InputCharacterRouter.swift; sourceTree = SOURCE_ROOT; };
+		985BFFAA2941931D00D86106 /* InputCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputCharacterViewController.swift; path = LoaMate/Home/InputCharacter/InputCharacterViewController.swift; sourceTree = SOURCE_ROOT; };
+		985BFFAB2941931D00D86106 /* InputCharacterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputCharacterBuilder.swift; path = LoaMate/Home/InputCharacter/InputCharacterBuilder.swift; sourceTree = SOURCE_ROOT; };
+		985BFFAC2941931D00D86106 /* InputCharacterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InputCharacterInteractor.swift; path = LoaMate/Home/InputCharacter/InputCharacterInteractor.swift; sourceTree = SOURCE_ROOT; };
+		985BFFB42941975500D86106 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		985BFFB7294197C400D86106 /* Montserrat ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat ExtraBold.ttf"; sourceTree = "<group>"; };
+		985BFFBA294199AC00D86106 /* Icons+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Icons+Generated.swift"; sourceTree = "<group>"; };
+		985BFFBC29419C8E00D86106 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		985BFFBE29419CDA00D86106 /* NaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviView.swift; sourceTree = "<group>"; };
+		985BFFC029419D8500D86106 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		985BFFC32941A3B200D86106 /* SetCharactersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersRouter.swift; sourceTree = "<group>"; };
+		985BFFC42941A3B200D86106 /* SetCharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersViewController.swift; sourceTree = "<group>"; };
+		985BFFC52941A3B200D86106 /* SetCharactersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersBuilder.swift; sourceTree = "<group>"; };
+		985BFFC62941A3B200D86106 /* SetCharactersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersInteractor.swift; sourceTree = "<group>"; };
+		985BFFCB2941AE7700D86106 /* SetCharactersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCharactersCell.swift; sourceTree = "<group>"; };
+		985BFFCD2941B53700D86106 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
+		985BFFCE2941B53700D86106 /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoH.ttf; sourceTree = "<group>"; };
 		9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.release.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate-LoaMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMate_LoaMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +192,67 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		985BFFB12941932700D86106 /* InputCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFA92941931D00D86106 /* InputCharacterRouter.swift */,
+				985BFFAA2941931D00D86106 /* InputCharacterViewController.swift */,
+				985BFFAB2941931D00D86106 /* InputCharacterBuilder.swift */,
+				985BFFAC2941931D00D86106 /* InputCharacterInteractor.swift */,
+			);
+			path = InputCharacter;
+			sourceTree = "<group>";
+		};
+		985BFFB22941933E00D86106 /* NaviView */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFBE29419CDA00D86106 /* NaviView.swift */,
+			);
+			path = NaviView;
+			sourceTree = "<group>";
+		};
+		985BFFB32941974000D86106 /* LoaMateAssets */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFB92941999E00D86106 /* Generated */,
+				985BFFB6294197B900D86106 /* Fonts */,
+				985BFFB42941975500D86106 /* Icons.xcassets */,
+				985BFFBC29419C8E00D86106 /* Colors.swift */,
+				985BFFC029419D8500D86106 /* Fonts.swift */,
+			);
+			path = LoaMateAssets;
+			sourceTree = "<group>";
+		};
+		985BFFB6294197B900D86106 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFCD2941B53700D86106 /* AppleSDGothicNeoEB.ttf */,
+				985BFFCE2941B53700D86106 /* AppleSDGothicNeoH.ttf */,
+				985BFFB7294197C400D86106 /* Montserrat ExtraBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		985BFFB92941999E00D86106 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFBA294199AC00D86106 /* Icons+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		985BFFC22941A3A300D86106 /* SetCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				985BFFC32941A3B200D86106 /* SetCharactersRouter.swift */,
+				985BFFC42941A3B200D86106 /* SetCharactersViewController.swift */,
+				985BFFC52941A3B200D86106 /* SetCharactersBuilder.swift */,
+				985BFFC62941A3B200D86106 /* SetCharactersInteractor.swift */,
+				985BFFCB2941AE7700D86106 /* SetCharactersCell.swift */,
+			);
+			path = SetCharacters;
+			sourceTree = "<group>";
+		};
 		CF3A0D6FCF1CB9C59994CC01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,11 +288,10 @@
 		FCE82A0429405A4800442771 /* LoaMate */ = {
 			isa = PBXGroup;
 			children = (
-				FCE82A7F294091AC00442771 /* LoaMateAssets */,
+				985BFFB32941974000D86106 /* LoaMateAssets */,
 				FCE82A6D29408C6000442771 /* Register */,
 				FCE82A3629405BFD00442771 /* AppRoot */,
 				FCE82A5229406A3900442771 /* Home */,
-				FCE82A5029406A1C00442771 /* Profile */,
 				FCE82A4F294064F400442771 /* LoaMate.entitlements */,
 				FCE82A4D2940624C00442771 /* GoogleService-Info.plist */,
 				FCE82A462940601100442771 /* Platform */,
@@ -269,17 +365,11 @@
 			path = "RIBs+Util";
 			sourceTree = "<group>";
 		};
-		FCE82A5029406A1C00442771 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		FCE82A5229406A3900442771 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FCE82A832940971D00442771 /* SetCharacters */,
+				985BFFC22941A3A300D86106 /* SetCharacters */,
+				985BFFB12941932700D86106 /* InputCharacter */,
 				FCE82A6C29408C5400442771 /* Main */,
 			);
 			path = Home;
@@ -318,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE82A6529407B2600442771 /* UserEmailModel.swift */,
+				985BFFA72940A71800D86106 /* UserData.swift */,
 			);
 			path = ServiceModel;
 			sourceTree = "<group>";
@@ -353,7 +444,7 @@
 		FCE82A7729408DAA00442771 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				FCE82A7D294090F500442771 /* NaviView */,
+				985BFFB22941933E00D86106 /* NaviView */,
 				FCE82A7829408DB100442771 /* BoxButton */,
 			);
 			path = DesignSystem;
@@ -367,13 +458,6 @@
 			path = BoxButton;
 			sourceTree = "<group>";
 		};
-		FCE82A7D294090F500442771 /* NaviView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NaviView;
-			sourceTree = "<group>";
-		};
 		FCE82A7E2940916F00442771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,28 +465,6 @@
 				FCE82A7B29408F8700442771 /* ArmoryProfileModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FCE82A7F294091AC00442771 /* LoaMateAssets */ = {
-			isa = PBXGroup;
-			children = (
-				FCE82A80294091C600442771 /* Fonts */,
-			);
-			path = LoaMateAssets;
-			sourceTree = "<group>";
-		};
-		FCE82A80294091C600442771 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		FCE82A832940971D00442771 /* SetCharacters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SetCharacters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +479,7 @@
 				FCE829FF29405A4800442771 /* Frameworks */,
 				FCE82A0029405A4800442771 /* Resources */,
 				D8F08836DF9E659567B93AD7 /* [CP] Embed Pods Frameworks */,
+				985BFFB82941994000D86106 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -516,8 +579,12 @@
 			files = (
 				FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */,
 				FCE82A4E2940624C00442771 /* GoogleService-Info.plist in Resources */,
+				985BFFD12941B54F00D86106 /* AppleSDGothicNeoEB.ttf in Resources */,
+				985BFFCF2941B54F00D86106 /* AppleSDGothicNeoH.ttf in Resources */,
 				FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */,
 				FCE82A0D29405A4800442771 /* Main.storyboard in Resources */,
+				985BFFB52941975500D86106 /* Icons.xcassets in Resources */,
+				985BFFD02941B54F00D86106 /* Montserrat ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +666,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		985BFFB82941994000D86106 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nswiftgen config run\n";
+		};
 		D8F08836DF9E659567B93AD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,31 +732,45 @@
 			files = (
 				FCE82A692940842A00442771 /* LostarkAPI.swift in Sources */,
 				FCE82A7329408C7900442771 /* MainViewController.swift in Sources */,
+				985BFFA82940A71800D86106 /* UserData.swift in Sources */,
+				985BFFBD29419C8E00D86106 /* Colors.swift in Sources */,
 				FCE82A5929406A4C00442771 /* LoginViewController.swift in Sources */,
 				FCE82A3A29405EB000442771 /* AppRootRouter.swift in Sources */,
 				FCE82A5B29406A4C00442771 /* LoginInteractor.swift in Sources */,
+				985BFFBF29419CDA00D86106 /* NaviView.swift in Sources */,
 				FCE82A492940602500442771 /* RIBs+Util.swift in Sources */,
+				985BFFAF2941931D00D86106 /* InputCharacterBuilder.swift in Sources */,
 				FCE82A7429408C7900442771 /* MainBuilder.swift in Sources */,
 				FCE82A4429405FBE00442771 /* RootTabBarController.swift in Sources */,
 				FCE82A6029407A4100442771 /* Realm+Util.swift in Sources */,
 				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
 				FCE82A7229408C7900442771 /* MainRouter.swift in Sources */,
 				FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */,
+				985BFFC129419D8500D86106 /* Fonts.swift in Sources */,
 				FCE82A7A29408DBA00442771 /* BoxButton.swift in Sources */,
 				FCE82A3829405EA100442771 /* AppComponent.swift in Sources */,
 				FCE82A6329407A7400442771 /* LoaMateRepository.swift in Sources */,
+				985BFFB02941931D00D86106 /* InputCharacterInteractor.swift in Sources */,
+				985BFFAD2941931D00D86106 /* InputCharacterRouter.swift in Sources */,
 				FCE82A3E29405F4700442771 /* AppRootInteractor.swift in Sources */,
 				FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */,
 				FCE82A4229405FA000442771 /* AppRootViewController.swift in Sources */,
+				985BFFC72941A3B200D86106 /* SetCharactersRouter.swift in Sources */,
+				985BFFBB294199AC00D86106 /* Icons+Generated.swift in Sources */,
 				FCE82A6629407B2600442771 /* UserEmailModel.swift in Sources */,
 				FCE82A5D29406E0900442771 /* AppleLoginManager.swift in Sources */,
 				FCE82A5829406A4C00442771 /* LoginRouter.swift in Sources */,
 				FCE82A6B2940876700442771 /* CharaterInfoModel.swift in Sources */,
+				985BFFCA2941A3B200D86106 /* SetCharactersInteractor.swift in Sources */,
 				FCE82A4B2940603300442771 /* AdaptivePresentationControllerDelegate.swift in Sources */,
+				985BFFCC2941AE7800D86106 /* SetCharactersCell.swift in Sources */,
 				FCE82A3C29405F1D00442771 /* AppRootBuilder.swift in Sources */,
+				985BFFC92941A3B200D86106 /* SetCharactersBuilder.swift in Sources */,
 				FCE82A82294092CE00442771 /* UIApplication+Util.swift in Sources */,
+				985BFFAE2941931D00D86106 /* InputCharacterViewController.swift in Sources */,
 				FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */,
 				FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */,
+				985BFFC82941A3B200D86106 /* SetCharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

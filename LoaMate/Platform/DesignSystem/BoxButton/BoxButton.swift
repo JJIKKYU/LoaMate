@@ -21,11 +21,6 @@ enum BoxButtonSize {
     case xLarge
 }
 
-// 필터가 적용되면서 색상이 변경되는 경우가 있음
-enum BoxButtonIsFiltered {
-    case enabled
-    case disabled
-}
 
 class BoxButton: UIButton {
     var btnStatus: BoxButtonStatus = .inactive {
@@ -33,10 +28,6 @@ class BoxButton: UIButton {
     }
     
     var btnSize: BoxButtonSize = .large {
-        didSet { setNeedsLayout() }
-    }
-    
-    var isFiltered: BoxButtonIsFiltered = .disabled {
         didSet { setNeedsLayout() }
     }
     
@@ -60,6 +51,8 @@ class BoxButton: UIButton {
     
     private let btnLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.textColor = Colors.textColor
+        $0.font = UIFont(name: UIFont.SDGhotic(.Bold), size: 16)
         // $0.textColor = Colors.grey.g800
         $0.text = "텍스트를 입력해주세요"
     }
@@ -77,7 +70,7 @@ class BoxButton: UIButton {
     
     func setViews() {
         addSubview(btnLabel)
-        // AppCorner(._4pt)
+        layer.cornerRadius = 6
         btnLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -102,25 +95,12 @@ class BoxButton: UIButton {
         switch btnStatus {
         case .active:
             // btnLabel.textColor = Colors.grey.g800
+            backgroundColor = Colors.tintColor
             btnLabel.textColor = .white
-
-            if btnSize == .xLarge {
-                switch isFiltered {
-                case .enabled:
-                    // backgroundColor = Colors.tint.main.v400
-                    backgroundColor = .systemBlue
-                case .disabled:
-                    // backgroundColor = Colors.tint.sub.n400
-                    backgroundColor = .systemBlue
-                }
-            } else {
-                // backgroundColor = Colors.tint.sub.n400
-                backgroundColor = .systemBlue
-            }
 
         case .inactive:
             // backgroundColor = Colors.grey.g700
-            backgroundColor = .systemBlue
+            backgroundColor = Colors.cardBG
             // btnLabel.textColor = Colors.grey.g500
             btnLabel.textColor = .white
             
@@ -129,20 +109,6 @@ class BoxButton: UIButton {
         case .pressed:
             // btnLabel.textColor = Colors.grey.g800
             btnLabel.textColor = .white
-            
-            if btnSize == .xLarge {
-                switch isFiltered {
-                case .enabled:
-                    // backgroundColor = Colors.tint.main.v600
-                    backgroundColor = .systemBlue
-                case .disabled:
-                    // backgroundColor = Colors.tint.sub.n600
-                    backgroundColor = .systemBlue
-                }
-            } else {
-                // backgroundColor = Colors.tint.sub.n600
-                backgroundColor = .systemBlue
-            }
         }
         
         switch isHighlighted {
