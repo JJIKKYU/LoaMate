@@ -133,8 +133,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let model = listener?.userDataRelay.value?.charactersWorksArr[indexPath.row] else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? MainCell else { return }
         
+        guard let model = listener?.userDataRelay.value?.charactersWorksArr.filter ({ $0.nickName == cell.characterName }).first else { return }
+        print("DidSelect! = \(model.nickName)")
         listener?.selectCharacterWorkModel(model: model)
     }
 }

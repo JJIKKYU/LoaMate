@@ -92,9 +92,11 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
             case .success(let response):
                 let result = try? response.map(ArmoryProfileModel.self)
                 if let result = result {
+                    print("sucess! = \(response.description), result-1 = \(result)")
                     self.characterProfileRelay.accept(result)
                 }
-                print("sucess! = \(response.description), result = \(result)")
+                
+                print("sucess! = \(response.description), result-2 = \(result)")
 
             case .failure(let error):
                 print("error = \(error.localizedDescription)")

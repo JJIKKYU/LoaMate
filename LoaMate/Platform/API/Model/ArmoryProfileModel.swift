@@ -8,15 +8,15 @@
 import Foundation
 
 public struct ArmoryProfileModel: Codable {
-    let CharacterImage: String
+    let CharacterImage: String?
     let ExpeditionLevel: Int
-    let PvpGradeName: String
-    let TownLevel: Int
-    let TownName: String
-    let Title: String
-    let GuildMemberGrade: String
-    let GuildName: String
-    let Stats: [StatsModel]
+    let PvpGradeName: String?
+    let TownLevel: Int?
+    let TownName: String?
+    let Title: String?
+    let GuildMemberGrade: String?
+    let GuildName: String?
+    let Stats: [StatsModel]?
     let Tendencies: [TendencyModel]
     let ServerName: String
     let CharacterName: String

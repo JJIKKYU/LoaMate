@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import RxRelay
 
 protocol DetailRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -27,8 +28,11 @@ protocol DetailInteractorDependecy {
 
 final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailInteractable, DetailPresentableListener {
 
+    var characterProfileModelRelay: BehaviorRelay<ArmoryProfileModel?>
+
     weak var router: DetailRouting?
     weak var listener: DetailListener?
+    private let disposeBag = DisposeBag()
     
     private let dependency: DetailInteractorDependecy
     let selectedModel: CharacterWork
@@ -42,6 +46,8 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
     ) {
         self.dependency = dependency
         self.selectedModel = selectedModel
+        print("Detail :: int! = \(selectedModel.nickName)")
+        self.characterProfileModelRelay = dependency.loaMateRepository.characterProfileRelay
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -49,11 +55,18 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
     override func didBecomeActive() {
         super.didBecomeActive()
         bind()
+        searchCharacter()
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func searchCharacter() {
+        print("Detail :: searchCharacter")
+        let userNickname: String = selectedModel.nickName
+        dependency.loaMateRepository.searchCharcterProfile(userNickname: userNickname)
     }
     
     func bind() {
@@ -63,7 +76,10 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
                 guard let self = self,
                       let model = model
                 else { return }
+                
+                print("Detail :: model = \(model)")
             })
+            .disposed(by: disposeBag)
     }
     
     func pressedBackBtn(isOnlyDetach: Bool) {
