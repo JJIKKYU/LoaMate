@@ -15,6 +15,7 @@ import Moya
 public protocol LoaMateRepository {
     // ChracterWork
     func setClearCommander(characterName: String, commanderName: CommandersName, isClear: Bool)
+    func setClearDaily(characterName: String, dailyType: DailyType, isClear: [Bool])
     
     // USerData
     func saveUserData(mainCharacterName: String, selectedCharacterArr: [CharacterInfoModel])
@@ -146,6 +147,27 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
         realm.safeWrite {
             newCharacterWork.isClear = isClear
         }
+    }
+    
+    public func setClearDaily(characterName: String, dailyType: DailyType, isClear: [Bool]) {
+        guard let realm = Realm.safeInit() else { return }
+        
+        guard let characterWork: CharacterWork = realm.objects(UserData.self).first?.charactersWorks.filter ({ $0.nickName == characterName }).first else { return }
+        
+        realm.safeWrite {
+            switch dailyType {
+            case .epona:
+                guard let newCharcterWork = characterWork.dailyWork?.epona else { return }
+                newCharcterWork.isClearsArr = isClear
+            case .guaridan:
+                guard let newCharcterWork = characterWork.dailyWork?.guardian else { return }
+                newCharcterWork.isClearsArr = isClear
+            case .chaos:
+                guard let newCharcterWork = characterWork.dailyWork?.chaos else { return }
+                newCharcterWork.isClearsArr = isClear
+            }
+        }
+        
     }
     
     public func fetchUserData() {

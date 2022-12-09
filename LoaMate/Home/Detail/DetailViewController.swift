@@ -19,11 +19,12 @@ protocol DetailPresentableListener: AnyObject {
     var characterWorkData: CharacterWork? { get }
     
     func setClearCommander(commanderName: CommandersName?, isClear: [Bool])
+    func setClearDaily(dailyType: DailyType?, isClear: [Bool])
 }
 
 final class DetailViewController: UIViewController, DetailPresentable, DetailViewControllable {
     
-    let dailyWorkOrder: [DetailCell.DailyType] = [.epona, .chaos, .guaridan]
+    let dailyWorkOrder: [DailyType] = [.epona, .chaos, .guaridan]
 
     weak var listener: DetailPresentableListener?
     private let disposeBag = DisposeBag()
@@ -261,6 +262,8 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
             case .none:
                 break
             }
+            
+            listener?.setClearDaily(dailyType: cell.dailyType, isClear: clears)
             
 
         default:

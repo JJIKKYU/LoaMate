@@ -107,4 +107,15 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
                                isClear: isClear
             )
     }
+    
+    // 데일리 숙제 클리어 저장
+    func setClearDaily(dailyType: DailyType?, isClear: [Bool]) {
+        guard let dailyType = dailyType else { return }
+        
+        dependency.loaMateRepository
+            .setClearDaily(characterName: selectedModel.nickName,
+                           dailyType: dailyType,
+                           isClear: isClear
+            )
+    }
 }

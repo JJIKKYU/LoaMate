@@ -9,18 +9,18 @@ import UIKit
 import Then
 import SnapKit
 
+public enum WorkType {
+    case commander
+    case daily
+}
+
+public enum DailyType: String {
+    case epona = "에포나"
+    case chaos = "카오스던전"
+    case guaridan = "가디언토벌"
+}
+
 class DetailCell: UICollectionViewCell {
-    
-    enum WorkType {
-        case commander
-        case daily
-    }
-    
-    enum DailyType: String {
-        case epona = "에포나"
-        case chaos = "카오스던전"
-        case guaridan = "가디언토벌"
-    }
     
     var workType: WorkType = .commander {
         didSet { setNeedsLayout() }
