@@ -19,6 +19,18 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal enum Commanders {
+    internal static let abrBG = ImageAsset(name: "Commanders/abrBG")
+    internal static let ilBG = ImageAsset(name: "Commanders/ilBG")
+    internal static let kkBG = ImageAsset(name: "Commanders/kkBG")
+    internal static let valBG = ImageAsset(name: "Commanders/valBG")
+    internal static let viaBG = ImageAsset(name: "Commanders/viaBG")
+  }
+  internal enum Daily {
+    internal static let chaosBG = ImageAsset(name: "Daily/chaosBG")
+    internal static let eponaBG = ImageAsset(name: "Daily/eponaBG")
+    internal static let guardianBG = ImageAsset(name: "Daily/guardianBG")
+  }
   internal static let loamate = ImageAsset(name: "LOAMATE")
   internal static let main = ImageAsset(name: "Main")
   internal enum Arrow {

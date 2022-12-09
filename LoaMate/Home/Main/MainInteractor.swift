@@ -73,6 +73,7 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
             .subscribe(onNext: { [weak self] characters in
                 guard let self = self else { return }
                 print("Main :: Interactor -> characters -> \(characters)")
+                self.presenter.tableViewReload()
             })
             .disposed(by: disposeBag)
         
@@ -90,6 +91,7 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
                 }
             })
             .disposed(by: disposeBag)
+
     }
     
     func reealmBind() {

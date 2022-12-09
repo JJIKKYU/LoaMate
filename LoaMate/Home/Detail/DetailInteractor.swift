@@ -15,7 +15,7 @@ protocol DetailRouting: ViewableRouting {
 
 protocol DetailPresentable: Presentable {
     var listener: DetailPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func setData()
 }
 
 protocol DetailListener: AnyObject {
@@ -29,6 +29,7 @@ protocol DetailInteractorDependecy {
 final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailInteractable, DetailPresentableListener {
 
     var characterProfileModelRelay: BehaviorRelay<ArmoryProfileModel?>
+    var characterWorkData: CharacterWork?
 
     weak var router: DetailRouting?
     weak var listener: DetailListener?
@@ -47,6 +48,8 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
         self.dependency = dependency
         self.selectedModel = selectedModel
         print("Detail :: int! = \(selectedModel.nickName)")
+        characterWorkData = dependency.loaMateRepository.userData.value?
+            .charactersWorks.filter ({ $0.nickName == selectedModel.nickName}).first
         self.characterProfileModelRelay = dependency.loaMateRepository.characterProfileRelay
         super.init(presenter: presenter)
         presenter.listener = self
@@ -78,6 +81,13 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
                 else { return }
                 
                 print("Detail :: model = \(model)")
+            })
+            .disposed(by: disposeBag)
+        
+        characterProfileModelRelay
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                self.presenter.setData()
             })
             .disposed(by: disposeBag)
     }

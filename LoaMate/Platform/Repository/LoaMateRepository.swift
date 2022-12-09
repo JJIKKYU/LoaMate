@@ -132,6 +132,8 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
         realm.safeWrite {
             realm.add(userData)
         }
+        
+        self.userData.accept(userData)
     }
     
     public func fetchUserData() {

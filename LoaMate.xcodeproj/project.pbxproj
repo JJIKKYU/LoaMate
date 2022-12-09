@@ -36,6 +36,8 @@
 		985BFFE0294225AB00D86106 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDC294225AB00D86106 /* DetailViewController.swift */; };
 		985BFFE1294225AB00D86106 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDD294225AB00D86106 /* DetailBuilder.swift */; };
 		985BFFE2294225AB00D86106 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFDE294225AB00D86106 /* DetailInteractor.swift */; };
+		985BFFE42942FA7200D86106 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFE32942FA7200D86106 /* DetailHeaderView.swift */; };
+		985BFFE62943006000D86106 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BFFE52943006000D86106 /* DetailCell.swift */; };
 		FCE82A0629405A4800442771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82A0529405A4800442771 /* AppDelegate.swift */; };
 		FCE82A0F29405A4900442771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A0E29405A4900442771 /* Assets.xcassets */; };
 		FCE82A1229405A4900442771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE82A1029405A4900442771 /* LaunchScreen.storyboard */; };
@@ -122,6 +124,8 @@
 		985BFFDC294225AB00D86106 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		985BFFDD294225AB00D86106 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		985BFFDE294225AB00D86106 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		985BFFE32942FA7200D86106 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		985BFFE52943006000D86106 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		9E7D45C3C378BB6AD84E2963 /* Pods-LoaMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMateTests.release.xcconfig"; path = "Target Support Files/Pods-LoaMateTests/Pods-LoaMateTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8E7147FEC4B0A11C7B8C7AD /* Pods-LoaMate-LoaMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoaMate-LoaMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoaMate-LoaMateUITests/Pods-LoaMate-LoaMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC13148D2F1DAF562596CA57 /* Pods_LoaMate_LoaMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoaMate_LoaMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +278,8 @@
 				985BFFDC294225AB00D86106 /* DetailViewController.swift */,
 				985BFFDD294225AB00D86106 /* DetailBuilder.swift */,
 				985BFFDE294225AB00D86106 /* DetailInteractor.swift */,
+				985BFFE32942FA7200D86106 /* DetailHeaderView.swift */,
+				985BFFE52943006000D86106 /* DetailCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -779,6 +785,7 @@
 				FCE82A4029405F7B00442771 /* AppRootComponent.swift in Sources */,
 				FCE82A7229408C7900442771 /* MainRouter.swift in Sources */,
 				FCE82A5A29406A4C00442771 /* LoginBuilder.swift in Sources */,
+				985BFFE62943006000D86106 /* DetailCell.swift in Sources */,
 				985BFFC129419D8500D86106 /* Fonts.swift in Sources */,
 				FCE82A7A29408DBA00442771 /* BoxButton.swift in Sources */,
 				FCE82A3829405EA100442771 /* AppComponent.swift in Sources */,
@@ -806,6 +813,7 @@
 				985BFFAE2941931D00D86106 /* InputCharacterViewController.swift in Sources */,
 				FCE82A7529408C7900442771 /* MainInteractor.swift in Sources */,
 				FCE82A7C29408F8700442771 /* ArmoryProfileModel.swift in Sources */,
+				985BFFE42942FA7200D86106 /* DetailHeaderView.swift in Sources */,
 				985BFFC82941A3B200D86106 /* SetCharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

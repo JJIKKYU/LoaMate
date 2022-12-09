@@ -16,9 +16,12 @@ import Kingfisher
 protocol DetailPresentableListener: AnyObject {
     func pressedBackBtn(isOnlyDetach: Bool)
     var characterProfileModelRelay: BehaviorRelay<ArmoryProfileModel?> { get }
+    var characterWorkData: CharacterWork? { get }
 }
 
 final class DetailViewController: UIViewController, DetailPresentable, DetailViewControllable {
+    
+    let dailyWorkOrder: [DetailCell.DailyType] = [.epona, .chaos, .guaridan]
 
     weak var listener: DetailPresentableListener?
     private let disposeBag = DisposeBag()
@@ -28,10 +31,24 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let characterImageView = UIImageView().then {
-        $0.layer.masksToBounds = false
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
+        let flowlayout = UICollectionViewFlowLayout.init()
+        flowlayout.scrollDirection = .vertical
+        flowlayout.minimumLineSpacing = 20
+        flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 30, right: 20)
+        $0.setCollectionViewLayout(flowlayout, animated: true)
+        
+        $0.register(DetailCell.self, forCellWithReuseIdentifier: "DetailCell")
+        $0.register(DetailHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DetailHeaderView")
+        $0.backgroundColor = Colors.bacgkround
+        $0.dataSource = self
+        $0.delegate = self
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleAspectFill
+    }
+    
+    private let tableViewHeaderView = UIView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = Colors.bacgkround
     }
     
     init() {
@@ -54,6 +71,7 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        
         if isMovingFromParent || isBeingDismissed {
             listener?.pressedBackBtn(isOnlyDetach: true)
         }
@@ -62,7 +80,9 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
     func setViews() {
         view.backgroundColor = Colors.bacgkround
         view.addSubview(naviView)
-        view.addSubview(characterImageView)
+        view.addSubview(collectionView)
+        view.bringSubviewToFront(naviView)
+
 
         naviView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -71,12 +91,15 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
             make.height.equalTo(44 + UIApplication.topSafeAreaHeight)
         }
         
-        characterImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.top.equalToSuperview().offset(UIApplication.topSafeAreaHeight)
-            make.width.equalTo(170)
-            make.height.equalTo(250)
+        collectionView.snp.makeConstraints { make in
+            make.leading.width.top.bottom.equalToSuperview()
         }
+    }
+    
+    func setData() {
+//        guard let data = listener?.characterProfileModelRelay.value else { return }
+//        characterNameLabel.text = data.CharacterName
+//        levelLabel.text = data.ItemMaxLevel
     }
     
     func bind() {
@@ -86,35 +109,18 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
                       let model = model
                 else { return }
                 
-                DispatchQueue.main.async {
-                    guard let url = URL(string: model.CharacterImage ?? "") else { return }
-                    self.characterImageView.kf.setImage(with: url,
-                                                        placeholder: nil,
-                                                        options: [.transition(.fade(1))],
-                                                        progressBlock: nil) { result in
-                        switch result {
-                        case .success(let imageResult):
-                            self.characterImageView.image = imageResult.image
-                        case .failure(let error):
-                            print("error! \(error)")
-                        }
-                    }
-                }
+                guard let commanderHeaderView = self.collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader)[safe: 0] as? DetailHeaderView,
+                      let dailyHeaderView = self.collectionView.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionHeader)[safe: 1] as? DetailHeaderView
+                else { return }
+                
+                commanderHeaderView.level = model.ItemMaxLevel
+                commanderHeaderView.characterName = model.CharacterName
+                commanderHeaderView.imageURL = model.CharacterImage
+                commanderHeaderView.section = 0
+                
+                dailyHeaderView.section = 1
             })
             .disposed(by: disposeBag)
-//
-//        if let thumbnailUrl = URL(string: item.thumbnailUrl!) {
-//            KingfisherManager.shared.retrieveImage(with: thumbnailUrl, completionHandler: { result in
-//            switch(result) {
-//                case .success(let imageResult):
-//                    let resized = imageResult.image.resizedImageWithContentMode(.scaleAspectFit, bounds: CGSize(width: 84, height: 84), interpolationQuality: .medium)
-//                    imageView.isHidden = false
-//                    imageView.image = resized
-//                case .failure(let error):
-//                    imageView.isHidden = true
-//                }
-//            })
-//        }
     }
 }
 
@@ -126,18 +132,81 @@ extension DetailViewController {
     }
 }
 
+// MARK: - UICollectionView
+extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        switch section {
+        case 0:
+            guard let data = listener?.characterWorkData else { return 0 }
+            return data.commandersWork?.commandersArr.count ?? 0
+            
+        case 1:
+            return 3
+            
+        default:
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCell", for: indexPath) as? DetailCell,
+              let data = listener?.characterWorkData
+        else { return UICollectionViewCell() }
 
-// MARK: - resizeImage
-extension DetailViewController {
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-
-        let scale = newWidth / image.size.width
-        let newHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
+        switch indexPath.section {
+        // 군단장
+        case 0:
+            cell.workType = .commander
+            cell.commanderName = data.commandersWork?.commandersArr[indexPath.row].name
+        // 일일숙제
+        case 1:
+            cell.workType = .daily
+            cell.dailyType = dailyWorkOrder[indexPath.row]
+            
+        default:
+            break
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.window?.windowScene?.screen.bounds.width ?? 0
+        
+        let newWidth = (width - 50) / 2
+        
+        print("Detail :: width = \(width)")
+        
+        return CGSize(width: newWidth, height: 60)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "DetailHeaderView", for: indexPath) as? DetailHeaderView
+            else { return UICollectionReusableView() }
+            
+            return headerView
+        }
+        
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
+                         referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        switch section {
+        case 0:
+            return CGSize(width: collectionView.frame.size.width, height: 290)
+        case 1:
+            return CGSize(width: collectionView.frame.size.width, height: 40)
+        default:
+            return CGSize.zero
+        }
     }
 }
