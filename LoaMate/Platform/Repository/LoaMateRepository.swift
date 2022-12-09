@@ -13,6 +13,9 @@ import RxRealm
 import Moya
 
 public protocol LoaMateRepository {
+    // ChracterWork
+    func setClearCommander(characterName: String, commanderName: CommandersName, isClear: Bool)
+    
     // USerData
     func saveUserData(mainCharacterName: String, selectedCharacterArr: [CharacterInfoModel])
     func fetchUserData()
@@ -92,11 +95,8 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
             case .success(let response):
                 let result = try? response.map(ArmoryProfileModel.self)
                 if let result = result {
-                    print("sucess! = \(response.description), result-1 = \(result)")
                     self.characterProfileRelay.accept(result)
                 }
-                
-                print("sucess! = \(response.description), result-2 = \(result)")
 
             case .failure(let error):
                 print("error = \(error.localizedDescription)")
@@ -134,6 +134,18 @@ public final class LoaMateRepositoryImp: LoaMateRepository {
         }
         
         self.userData.accept(userData)
+    }
+    
+    public func setClearCommander(characterName: String, commanderName: CommandersName, isClear: Bool) {
+        guard let realm = Realm.safeInit() else { return }
+        
+        guard let characterWork: CharacterWork = realm.objects(UserData.self).first?.charactersWorks.filter ({ $0.nickName == characterName }).first else { return }
+        
+        guard let newCharacterWork = characterWork.commandersWork?.commanders.filter({ $0.name == commanderName }).first else { return }
+        
+        realm.safeWrite {
+            newCharacterWork.isClear = isClear
+        }
     }
     
     public func fetchUserData() {

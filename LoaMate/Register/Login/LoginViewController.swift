@@ -23,11 +23,16 @@ final class LoginViewController: UIViewController, LoginPresentable, LoginViewCo
         $0.delegate = self
     }
     
-    private lazy var appleLoginBtn = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black).then {
+    private lazy var appleLoginBtn = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .white).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.addTarget(self, action: #selector(pressedAppleLoginBtn), for: .touchUpInside)
     }
     
+    private let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.image = Asset.main.image
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     // MARK: - VC 코드
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -41,7 +46,7 @@ final class LoginViewController: UIViewController, LoginPresentable, LoginViewCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.bacgkround
         setViews()
         print("Login :: Login ViewDidLoad!!")
     }
@@ -49,12 +54,19 @@ final class LoginViewController: UIViewController, LoginPresentable, LoginViewCo
     func setViews() {
         print("Login :: SetViews!")
         view.addSubview(appleLoginBtn)
+        view.addSubview(imageView)
+        
+        imageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(140)
+            make.centerX.equalToSuperview()
+            make.width.height.equalTo(264)
+        }
         
         appleLoginBtn.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.width.equalToSuperview().inset(20)
-            make.height.equalTo(56)
-            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(60)
+            make.width.equalToSuperview().inset(60)
+            make.height.equalTo(46)
+            make.bottom.equalToSuperview().inset(80)
         }
     }
 }

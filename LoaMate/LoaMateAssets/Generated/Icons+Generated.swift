@@ -24,6 +24,7 @@ internal enum Asset {
     internal static let ilBG = ImageAsset(name: "Commanders/ilBG")
     internal static let kkBG = ImageAsset(name: "Commanders/kkBG")
     internal static let valBG = ImageAsset(name: "Commanders/valBG")
+    internal static let valBG2 = ImageAsset(name: "Commanders/valBG_2")
     internal static let viaBG = ImageAsset(name: "Commanders/viaBG")
   }
   internal enum Daily {

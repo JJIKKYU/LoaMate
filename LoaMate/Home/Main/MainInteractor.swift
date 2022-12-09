@@ -23,6 +23,9 @@ protocol MainRouting: ViewableRouting {
 protocol MainPresentable: Presentable {
     var listener: MainPresentableListener? { get set }
     func tableViewReload()
+    
+    func insertRow(at indexs: [Int])
+    func updateRow(at indexs: [Int])
 }
 
 protocol MainListener: AnyObject {
@@ -69,15 +72,6 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
     
     func bind() {
         dependency.loaMateRepository
-            .charactersInfoRelay
-            .subscribe(onNext: { [weak self] characters in
-                guard let self = self else { return }
-                print("Main :: Interactor -> characters -> \(characters)")
-                self.presenter.tableViewReload()
-            })
-            .disposed(by: disposeBag)
-        
-        dependency.loaMateRepository
             .userData
             .subscribe(onNext: { [weak self] userData in
                 guard let self = self else { return }
@@ -116,6 +110,28 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
                 }
         })
         */
+        
+        
+        
+        let charcterWorks = realm.objects(UserData.self).first?.charactersWorks
+        userDataNotificationToken = charcterWorks?.observe({ changes in
+            switch changes {
+            case .initial(let model):
+                self.presenter.tableViewReload()
+                
+            case .update(let model, let deletions, let insertions, let modifications):
+                if insertions.count > 0 {
+                    
+                }
+                
+                if modifications.count > 0 {
+                    self.presenter.updateRow(at: modifications)
+                }
+                
+            case .error(let error):
+                break
+            }
+        })
     }
     
     func completeSetCharacters() {

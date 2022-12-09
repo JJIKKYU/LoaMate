@@ -27,7 +27,7 @@ protocol DetailInteractorDependecy {
 }
 
 final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailInteractable, DetailPresentableListener {
-
+    
     var characterProfileModelRelay: BehaviorRelay<ArmoryProfileModel?>
     var characterWorkData: CharacterWork?
 
@@ -94,5 +94,17 @@ final class DetailInteractor: PresentableInteractor<DetailPresentable>, DetailIn
     
     func pressedBackBtn(isOnlyDetach: Bool) {
         listener?.detailPressedBackBtn(isOnlyDetach: isOnlyDetach)
+    }
+    
+    // 군단장 클리어 저장
+    func setClearCommander(commanderName: CommandersName?, isClear: [Bool]) {
+        guard let commanderName = commanderName,
+              let isClear = isClear.first
+        else { return }
+        dependency.loaMateRepository
+            .setClearCommander(characterName: selectedModel.nickName,
+                               commanderName: commanderName,
+                               isClear: isClear
+            )
     }
 }

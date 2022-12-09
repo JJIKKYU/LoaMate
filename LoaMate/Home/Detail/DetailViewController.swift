@@ -17,6 +17,8 @@ protocol DetailPresentableListener: AnyObject {
     func pressedBackBtn(isOnlyDetach: Bool)
     var characterProfileModelRelay: BehaviorRelay<ArmoryProfileModel?> { get }
     var characterWorkData: CharacterWork? { get }
+    
+    func setClearCommander(commanderName: CommandersName?, isClear: [Bool])
 }
 
 final class DetailViewController: UIViewController, DetailPresentable, DetailViewControllable {
@@ -35,7 +37,7 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
         let flowlayout = UICollectionViewFlowLayout.init()
         flowlayout.scrollDirection = .vertical
         flowlayout.minimumLineSpacing = 20
-        flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 30, right: 20)
+        flowlayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 35, right: 20)
         $0.setCollectionViewLayout(flowlayout, animated: true)
         
         $0.register(DetailCell.self, forCellWithReuseIdentifier: "DetailCell")
@@ -63,9 +65,14 @@ final class DetailViewController: UIViewController, DetailPresentable, DetailVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         setViews()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -163,10 +170,21 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case 0:
             cell.workType = .commander
             cell.commanderName = data.commandersWork?.commandersArr[indexPath.row].name
+            cell.isClear = [data.commandersWork?.commandersArr[indexPath.row].isClear ?? false]
         // 일일숙제
         case 1:
             cell.workType = .daily
             cell.dailyType = dailyWorkOrder[indexPath.row]
+            switch cell.dailyType {
+            case .epona:
+                cell.isClear = data.dailyWork?.epona?.isClearsArr ?? []
+            case .chaos:
+                cell.isClear = data.dailyWork?.chaos?.isClearsArr ?? []
+            case .guaridan:
+                cell.isClear = data.dailyWork?.guardian?.isClearsArr ?? []
+            case .none:
+                break
+            }
             
         default:
             break
@@ -207,6 +225,46 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return CGSize(width: collectionView.frame.size.width, height: 40)
         default:
             return CGSize.zero
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DetailCell else { return }
+        
+        print("Detail :: Select! \(indexPath.section) \(indexPath.row), \(cell.isClear)")
+        
+        switch indexPath.section {
+        case 0:
+            cell.isClear = [!(cell.isClear.first ?? false)]
+            listener?.setClearCommander(commanderName: cell.commanderName, isClear: cell.isClear)
+
+        case 1:
+            let clearCount: Int = cell.isClear.filter ({ $0 == true }).count
+            var clears: [Bool] = cell.isClear
+            switch cell.dailyType {
+            case .chaos, .guaridan:
+                if clearCount >= 2 {
+                    clears = [false, false]
+                } else {
+                    clears[clearCount] = true
+                }
+                cell.isClear = clears
+
+            case .epona:
+                if clearCount >= 3 {
+                    clears = [false, false, false]
+                } else {
+                    clears[clearCount] = true
+                }
+                cell.isClear = clears
+
+            case .none:
+                break
+            }
+            
+
+        default:
+            break
         }
     }
 }

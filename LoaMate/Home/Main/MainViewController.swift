@@ -17,7 +17,7 @@ protocol MainPresentableListener: AnyObject {
     func selectCharacterWorkModel(model: CharacterWork)
 }
 
-final class MainViewController: UIViewController, MainPresentable, MainViewControllable {
+final class MainViewController: UIViewController, MainViewControllable {
     
 
     weak var listener: MainPresentableListener?
@@ -48,6 +48,8 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
         
         view.backgroundColor = .white
         print("Main :: viewDidLoad!")
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         setViews()
     }
     
@@ -76,11 +78,24 @@ final class MainViewController: UIViewController, MainPresentable, MainViewContr
             make.bottom.equalToSuperview()
         }
     }
+}
 
+extension MainViewController: MainPresentable {
+    func updateRow(at indexs: [Int]) {
+        let indexPaths = indexs.map { IndexPath(item: $0, section: 0) }
+        tableView.reloadRows(at: indexPaths, with: .automatic)
+    }
+    
+    func insertRow(at indexs: [Int]) {
+        tableView.beginUpdates()
+        let indexPaths = indexs.map { IndexPath(item: $0, section: 0) }
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        tableView.endUpdates()
+    }
+    
     func tableViewReload() {
         tableView.reloadData()
     }
-    
 }
 
 // MARK: - UITableviewDelegate
@@ -104,9 +119,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         for commander in commandersArr {
             print("Main :: \(commander.name.rawValue)를 \(commander.isClear == true ? "클리어했습니다." : "클리어하지 않았습니다.")")
             cell.isShowCommander.append(commander.name)
-            if commander.name == .abr {
-                isClearCommanders.append(commander.name)
-            }
             if commander.isClear {
                 isClearCommanders.append(commander.name)
             }
@@ -120,7 +132,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.guardianClearCount = guardianClearCount
         
         let chaosClearCount: Int = data.dailyWork?.chaos?.isClears.filter({ $0 == true }).count ?? 0
-        cell.chaosClearCount = 3
+        cell.chaosClearCount = chaosClearCount
         
         
         cell.layer.zPosition = CGFloat(indexPath.row)

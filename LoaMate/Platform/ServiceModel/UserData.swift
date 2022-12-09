@@ -71,6 +71,15 @@ class DailyWork: EmbeddedObject {
 class ChaosWork: EmbeddedObject {
     @Persisted var restGauge: Int // max 100, min 0 매일 안돌면 20, 오늘돌았니.count == 1 -> +10, 오늘돌았니.count == 2 -> +0, 오늘돌았니.count ==0 -> +20
     @Persisted var isClears: List<Bool> // [false, false] [true, false] [true, true] -> true가 하나면 -20, true가 두개면 -40
+    var isClearsArr: [Bool] {
+        get {
+            return isClears.map { $0 }
+        }
+        set {
+            isClears.removeAll()
+            isClears.append(objectsIn: newValue)
+        }
+    }
     @Persisted var clearDate: Date?
     
     convenience init(restGauge: Int, isClears: [Bool], clearDate: Date? = nil) {
@@ -84,6 +93,15 @@ class ChaosWork: EmbeddedObject {
 class EponaWork: EmbeddedObject {
     @Persisted var restGauge: Int
     @Persisted var isClears: List<Bool>
+    var isClearsArr: [Bool] {
+        get {
+            return isClears.map { $0 }
+        }
+        set {
+            isClears.removeAll()
+            isClears.append(objectsIn: newValue)
+        }
+    }
     @Persisted var clearDate: Date?
     
     convenience init(restGauge: Int, isClears: [Bool], clearDate: Date? = nil) {
@@ -97,6 +115,15 @@ class EponaWork: EmbeddedObject {
 class GuardianWork: EmbeddedObject {
     @Persisted var restGauge: Int
     @Persisted var isClears: List<Bool>
+    var isClearsArr: [Bool] {
+        get {
+            return isClears.map { $0 }
+        }
+        set {
+            isClears.removeAll()
+            isClears.append(objectsIn: newValue)
+        }
+    }
     @Persisted var clearDate: Date?
     
     convenience init(restGauge: Int, isClears: [Bool], clearDate: Date? = nil) {

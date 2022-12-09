@@ -18,6 +18,8 @@ protocol LoginViewControllable: ViewControllable {
 
 final class LoginRouter: ViewableRouter<LoginInteractable, LoginViewControllable>, LoginRouting {
 
+    var navigationController: NavigationControllerable?
+    
     private let main: MainBuildable
     private var mainRouting: ViewableRouting?
     
@@ -32,6 +34,25 @@ final class LoginRouter: ViewableRouter<LoginInteractable, LoginViewControllable
         interactor.router = self
     }
     
+    // Bottom Up 으로 스크린을 띄울때
+    private func presentInsideNavigation(_ viewControllable: ViewControllable) {
+        let navigation = NavigationControllerable(root: viewControllable)
+        navigation.navigationController.isNavigationBarHidden = true
+        navigation.navigationController.modalPresentationStyle = .fullScreen
+        self.navigationController = navigation
+        
+        viewController.present(navigation, animated: true, completion:  nil)
+    }
+
+    private func dismissPresentedNavigation(completion: (() -> Void)?) {
+        if self.navigationController == nil {
+            return
+        }
+
+        viewController.dismiss(completion: nil)
+        self.navigationController = nil
+    }
+    
     func attachMain() {
         if mainRouting != nil {
             return
@@ -41,7 +62,8 @@ final class LoginRouter: ViewableRouter<LoginInteractable, LoginViewControllable
             withListener: interactor
         )
         
-        viewController.pushViewController(router.viewControllable, animated: true)
+        presentInsideNavigation(router.viewControllable)
+        // viewController.pushViewController(router.viewControllable, animated: true)
         
         mainRouting = router
         attachChild(router)

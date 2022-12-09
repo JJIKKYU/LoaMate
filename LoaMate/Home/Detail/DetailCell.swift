@@ -46,11 +46,37 @@ class DetailCell: UICollectionViewCell {
     }
     
     private let stackView = UIStackView().then {
-        $0.alignment = .leading
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 8
+        $0.alignment = .fill
         $0.axis = .horizontal
-        $0.distribution = .fill
+        $0.distribution = .fillProportionally
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    private let imageblackView1 = UIView().then {
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = false
+    }
+    private let imageblackView2 = UIView().then {
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = false
+    }
+    private let imageblackView3 = UIView().then {
+        $0.layer.masksToBounds = true
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = false
+    }
+    private lazy var imageblackViewArr: [UIView] = [
+        imageblackView1,
+        imageblackView2,
+        imageblackView3,
+    ]
     
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -83,6 +109,7 @@ class DetailCell: UICollectionViewCell {
 
         addSubview(imageView)
         addSubview(stackView)
+        bringSubviewToFront(stackView)
         addSubview(workLabel)
         
         workLabel.snp.makeConstraints { make in
@@ -98,6 +125,10 @@ class DetailCell: UICollectionViewCell {
         stackView.snp.makeConstraints { make in
             make.leading.top.bottom.width.equalToSuperview()
         }
+        
+        stackView.addArrangedSubview(imageblackView1)
+        stackView.addArrangedSubview(imageblackView2)
+        stackView.addArrangedSubview(imageblackView3)
     }
     
     override func layoutSubviews() {
@@ -106,17 +137,39 @@ class DetailCell: UICollectionViewCell {
         switch workType {
         case .commander:
             workLabel.text = commanderName?.rawValue ?? ""
+            let isClear: Bool = self.isClear.first ?? false
             switch commanderName {
             case .val:
-                imageView.image = Asset.Commanders.valBG.image
+                if isClear {
+                    imageView.image = Asset.Commanders.valBG2.image
+                } else {
+                    imageView.image = Asset.Commanders.valBG.image
+                }
+                
             case .via:
-                imageView.image = Asset.Commanders.viaBG.image
+                if isClear {
+                    imageView.image = Asset.Commanders.viaBG.image.noir ?? UIImage()
+                } else {
+                    imageView.image = Asset.Commanders.viaBG.image
+                }
             case .kk:
-                imageView.image = Asset.Commanders.kkBG.image
+                if isClear {
+                    imageView.image = Asset.Commanders.kkBG.image.noir ?? UIImage()
+                } else {
+                    imageView.image = Asset.Commanders.kkBG.image
+                }
             case .abr:
-                imageView.image = Asset.Commanders.abrBG.image
+                if isClear {
+                    imageView.image = Asset.Commanders.abrBG.image.noir ?? UIImage()
+                } else {
+                    imageView.image = Asset.Commanders.abrBG.image
+                }
             case .il:
-                imageView.image = Asset.Commanders.ilBG.image
+                if isClear {
+                    imageView.image = Asset.Commanders.ilBG.image.noir ?? UIImage()
+                } else {
+                    imageView.image = Asset.Commanders.ilBG.image
+                }
             case .none:
                 break
             }
@@ -125,13 +178,27 @@ class DetailCell: UICollectionViewCell {
             workLabel.text = dailyType?.rawValue ?? ""
             switch dailyType {
             case .guaridan:
+                imageblackView3.isHidden = true
                 imageView.image = Asset.Daily.guardianBG.image
             case .chaos:
+                imageblackView3.isHidden = true
                 imageView.image = Asset.Daily.chaosBG.image
             case .epona:
                 imageView.image = Asset.Daily.eponaBG.image
             case .none:
                 break
+            }
+            
+            let clearCount: Int = isClear.filter ({ $0 == true }).count
+            if clearCount == 0 {
+                for count in 0..<3 {
+                    imageblackViewArr[safe: count]?.backgroundColor = .black.withAlphaComponent(0.3)
+                }
+            } else {
+                for count in 0..<clearCount {
+                    print("DetailCell :: clearCount = \(clearCount) - \(count), \(imageblackViewArr[safe: count])")
+                    imageblackViewArr[safe: count]?.backgroundColor = .black.withAlphaComponent(0.7)
+                }
             }
         }
     }
