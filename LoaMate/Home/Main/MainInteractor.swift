@@ -81,7 +81,8 @@ final class MainInteractor: PresentableInteractor<MainPresentable>, MainInteract
                         self.router?.attachInputCharacters()
                     }
                 } else {
-                    self.presenter.tableViewReload()
+                    self.reealmBind()
+                    // self.presenter.tableViewReload()
                 }
             })
             .disposed(by: disposeBag)

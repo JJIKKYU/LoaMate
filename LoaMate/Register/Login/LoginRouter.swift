@@ -48,7 +48,7 @@ final class LoginRouter: ViewableRouter<LoginInteractable, LoginViewControllable
         if self.navigationController == nil {
             return
         }
-
+        
         viewController.dismiss(completion: nil)
         self.navigationController = nil
     }

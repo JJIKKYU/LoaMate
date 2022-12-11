@@ -30,7 +30,7 @@ final class LoginViewController: UIViewController, LoginPresentable, LoginViewCo
     
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = Asset.main.image
+        $0.image = Asset.mainIcon.image
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     // MARK: - VC 코드

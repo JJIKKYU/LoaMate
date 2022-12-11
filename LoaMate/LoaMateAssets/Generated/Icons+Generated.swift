@@ -52,6 +52,7 @@ internal enum Asset {
     internal static let active = ImageAsset(name: "check/active")
     internal static let unactive = ImageAsset(name: "check/unactive")
   }
+  internal static let mainIcon = ImageAsset(name: "mainIcon")
   internal static let order = ImageAsset(name: "order")
   internal static let setting = ImageAsset(name: "setting")
 }
